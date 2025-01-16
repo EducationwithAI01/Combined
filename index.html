@@ -1,143 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dual Notepad with Divider</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            display: flex;
-            width: 80%;
-            height: 90%;
-            border: 1px solid #ccc;
-        }
-        .notepad {
-            width: 45%;
-            height: 100%;
-            padding: 10px;
-            overflow-y: auto;
-            resize: none;
-        }
-        #left-notepad {
-            resize: none;
-        }
-        .divider {
-            width: 1px;
-            background-color: #ccc;
-            height: 100%;
-        }
-        .post {
-            background-color: #f1f1f1;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 5px;
-            position: relative;
-            cursor: pointer;
-        }
-        .post button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 5px 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .post button:hover {
-            background-color: #45a049;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counting 1 to 100</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    #counter {
+      font-size: 5rem;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
+  <div id="counter">1</div>
 
-    <div class="container">
-        <!-- Left Notepad (Normal Text Area) -->
-        <textarea id="left-notepad" class="notepad" placeholder="Type here..."></textarea>
-        <!-- Divider -->
-        <div class="divider"></div>
-        <!-- Right Notepad (Post Viewer and Copier) -->
-        <div id="right-notepad" class="notepad"></div>
-    </div>
+  <script>
+    let count = 1;
+    const counterElement = document.getElementById('counter');
 
-    <script>
-        // Store posts in an array and the current post index
-        let posts = [];
-        let currentPostIndex = 0;
+    function updateCounter() {
+      if (count <= 100) {
+        counterElement.textContent = count;
+        count++;
+        setTimeout(updateCounter, 500); // Updates every 500ms
+      }
+    }
 
-        // Function to update the right notepad with posts (2 line breaks = 1 post)
-        function updateRightNotepad() {
-            const leftContent = document.getElementById('left-notepad').value;
-            // Split content by two line breaks, treating them as the end of a post
-            posts = leftContent.split(/\n{2,}/);  // Split at two or more line breaks
-
-            if (posts.length > 0) {
-                // Format posts to include line breaks and remove numbering
-                posts = posts.map(formatPostWithLineBreaksAndRemoveNumbers);
-                // Display the first post
-                displayPost(currentPostIndex);
-            }
-        }
-
-        // Function to format a post by adding line breaks after full stops and question marks
-        // and removing leading numbers like 1., 2., 3.
-        function formatPostWithLineBreaksAndRemoveNumbers(post) {
-            // Remove leading numbers followed by a dot and optional whitespace (e.g., "1. ", "23. ")
-            post = post.replace(/^\d+\.\s*/, '');
-            // Add a line break after every full stop and question mark
-            return post.replace(/([.?])\s*/g, '$1\n\n');
-        }
-
-        // Function to display a post in the right notepad
-        function displayPost(index) {
-            const rightNotepad = document.getElementById('right-notepad');
-            rightNotepad.innerHTML = '';  // Clear previous content
-
-            if (index < posts.length) {
-                const postElement = document.createElement('div');
-                postElement.classList.add('post');
-                postElement.innerHTML = posts[index];
-
-                // Create a copy button
-                const copyButton = document.createElement('button');
-                copyButton.textContent = 'Copy';
-                copyButton.onclick = () => copyPost(index);  // Assign copy function
-
-                postElement.appendChild(copyButton);
-                postElement.onclick = () => copyPost(index);  // Clicking anywhere on the post will copy the post
-                
-                rightNotepad.appendChild(postElement);
-            } else {
-                rightNotepad.innerHTML = '<p>No more posts available.</p>';
-            }
-        }
-
-        // Function to copy the selected post
-        function copyPost(index) {
-            const post = posts[index];
-            const textArea = document.createElement('textarea');
-            textArea.value = post;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textArea);
-
-            // Remove current post and show the next one
-            currentPostIndex++;
-            displayPost(currentPostIndex);
-        }
-
-        // Listen for changes in the left notepad to update the right notepad
-        document.getElementById('left-notepad').addEventListener('input', updateRightNotepad);
-    </script>
-    
+    updateCounter();
+  </script>
 </body>
 </html>
