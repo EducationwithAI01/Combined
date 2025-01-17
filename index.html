@@ -3,56 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Facts</title>
+  <title>Screenshot Text</title>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f4f4f4;
-    }
-    #content {
-      font-size: 2rem;
       text-align: center;
-      color: #333;
-      max-width: 80%;
+      margin: 20px;
+    }
+    #text-container {
+      font-size: 1.5rem;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border: 1px solid #ccc;
+      display: inline-block;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div id="content">Loading AI content...</div>
+  <div id="text-container">
+    Building AI models is not just about coding. It’s a process from understanding the problem to collecting data, training, and finally deploying. Each step builds upon the last to create functional AI systems.
+  </div>
+  <br>
+  <button onclick="takeScreenshot()">Take Screenshot</button>
 
   <script>
-    const aiFacts = [
-      "Artificial Intelligence is the simulation of human intelligence by machines.",
-      "AI is widely used in speech recognition, natural language processing, and image recognition.",
-      "Machine learning is a subset of AI that focuses on data-driven learning and predictions.",
-      "Deep learning uses neural networks to analyze vast amounts of data for complex problem solving.",
-      "AI is transforming industries such as healthcare, finance, and autonomous driving.",
-      "Natural Language Processing (NLP) enables AI to understand and respond to human language.",
-      "AI algorithms are trained using large datasets to improve accuracy and efficiency.",
-      "Reinforcement learning allows AI to learn by trial and error in dynamic environments.",
-      "Ethical AI development focuses on fairness, transparency, and accountability.",
-      "Generative AI models like ChatGPT create text, images, and even music based on input."
-    ];
+    function takeScreenshot() {
+      const element = document.getElementById('text-container');
 
-    let index = 0;
-    const contentElement = document.getElementById('content');
-
-    function displayAIContent() {
-      if (index < aiFacts.length) {
-        contentElement.textContent = aiFacts[index];
-        index++;
-        setTimeout(displayAIContent, 2000); // Updates every 2 seconds
-      } else {
-        contentElement.textContent = "You've reached the end of the AI facts!";
-      }
+      // Use html2canvas to take a screenshot of the specified element
+      html2canvas(element).then((canvas) => {
+        // Convert canvas to an image and download it
+        const link = document.createElement('a');
+        link.download = 'screenshot.png';
+        link.href = canvas.toDataURL();
+        link.click();
+      });
     }
-
-    displayAIContent();
   </script>
 </body>
 </html>
