@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Counting 1 to 100</title>
+  <title>AI Facts</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,28 +14,45 @@
       margin: 0;
       background-color: #f4f4f4;
     }
-    #counter {
-      font-size: 5rem;
+    #content {
+      font-size: 2rem;
+      text-align: center;
       color: #333;
+      max-width: 80%;
     }
   </style>
 </head>
 <body>
-  <div id="counter">1</div>
+  <div id="content">Loading AI content...</div>
 
   <script>
-    let count = 1;
-    const counterElement = document.getElementById('counter');
+    const aiFacts = [
+      "Artificial Intelligence is the simulation of human intelligence by machines.",
+      "AI is widely used in speech recognition, natural language processing, and image recognition.",
+      "Machine learning is a subset of AI that focuses on data-driven learning and predictions.",
+      "Deep learning uses neural networks to analyze vast amounts of data for complex problem solving.",
+      "AI is transforming industries such as healthcare, finance, and autonomous driving.",
+      "Natural Language Processing (NLP) enables AI to understand and respond to human language.",
+      "AI algorithms are trained using large datasets to improve accuracy and efficiency.",
+      "Reinforcement learning allows AI to learn by trial and error in dynamic environments.",
+      "Ethical AI development focuses on fairness, transparency, and accountability.",
+      "Generative AI models like ChatGPT create text, images, and even music based on input."
+    ];
 
-    function updateCounter() {
-      if (count <= 100) {
-        counterElement.textContent = count;
-        count++;
-        setTimeout(updateCounter, 500); // Updates every 500ms
+    let index = 0;
+    const contentElement = document.getElementById('content');
+
+    function displayAIContent() {
+      if (index < aiFacts.length) {
+        contentElement.textContent = aiFacts[index];
+        index++;
+        setTimeout(displayAIContent, 2000); // Updates every 2 seconds
+      } else {
+        contentElement.textContent = "You've reached the end of the AI facts!";
       }
     }
 
-    updateCounter();
+    displayAIContent();
   </script>
 </body>
 </html>
