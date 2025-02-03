@@ -1,51 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Screenshot Text</title>
-  <script src="https://cdn.jsdelivr.net/npm/html2canvas"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 20px;
-    }
-    #text-container {
-      font-size: 1.5rem;
-      background-color: #f4f4f4;
-      padding: 20px;
-      border: 1px solid #ccc;
-      display: inline-block;
-    }
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Notepad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .notepad-container {
+            width: 80%;
+            max-width: 600px;
+            height: 80%;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 24px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .textarea {
+            flex-grow: 1;
+            padding: 20px;
+            border: none;
+            font-size: 16px;
+            resize: none;
+            outline: none;
+            height: 100%;
+            background-color: #f9f9f9;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+    </style>
 </head>
 <body>
-  <div id="text-container">
-    Building AI models is not just about coding. It’s a process from understanding the problem to collecting data, training, and finally deploying. Each step builds upon the last to create functional AI systems.
-  </div>
-  <br>
-  <button onclick="takeScreenshot()">Take Screenshot</button>
-
-  <script>
-    function takeScreenshot() {
-      const element = document.getElementById('text-container');
-
-      // Use html2canvas to take a screenshot of the specified element
-      html2canvas(element).then((canvas) => {
-        // Convert canvas to an image and download it
-        const link = document.createElement('a');
-        link.download = 'screenshot.png';
-        link.href = canvas.toDataURL();
-        link.click();
-      });
-    }
-  </script>
+    <div class="notepad-container">
+        <div class="header">Notepad</div>
+        <textarea class="textarea" placeholder="Start writing..."></textarea>
+    </div>
 </body>
 </html>
