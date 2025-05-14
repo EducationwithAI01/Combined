@@ -2,159 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AI Quiz Game</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #1e3c72, #2a5298);
-      color: #fff;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .quiz-container {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 40px;
-      border-radius: 20px;
-      width: 90%;
-      max-width: 800px;
-      text-align: center;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    }
-    .question {
-      font-size: 28px;
-      margin-bottom: 30px;
-    }
-    .option {
-      background: rgba(255, 255, 255, 0.2);
-      padding: 15px 20px;
-      margin: 10px 0;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: 0.3s;
-      font-size: 20px;
-    }
-    .option:hover {
-      background: rgba(255, 255, 255, 0.4);
-    }
-    .option.correct {
-      background: #4caf50;
-    }
-    .option.wrong {
-      background: #f44336;
-    }
-    #nextBtn {
-      margin-top: 30px;
-      padding: 12px 25px;
-      font-size: 18px;
-      background: #ffc107;
-      color: #000;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      display: none;
-    }
-    #score {
-      margin-top: 20px;
-      font-size: 22px;
-      font-weight: bold;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Quiz</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="quiz-container">
-  <div class="question" id="question"></div>
-  <div class="option" onclick="selectOption(this)"></div>
-  <div class="option" onclick="selectOption(this)"></div>
-  <div class="option" onclick="selectOption(this)"></div>
-  <div class="option" onclick="selectOption(this)"></div>
-  <button id="nextBtn" onclick="nextQuestion()">Next</button>
-  <div id="score">Score: 0</div>
-</div>
-
-<script>
-  const quizData = [
-    {
-      question: "What does AI stand for?",
-      options: ["Automated Internet", "Artificial Intelligence", "Automatic Input", "Advanced Innovation"],
-      answer: "Artificial Intelligence"
-    },
-    {
-      question: "Which of these is an example of AI we use daily?",
-      options: ["Calculator", "Alarm Clock", "Voice Assistant (like Siri or Alexa)", "Flashlight"],
-      answer: "Voice Assistant (like Siri or Alexa)"
-    },
-    {
-      question: "Which company created ChatGPT?",
-      options: ["Google", "Amazon", "OpenAI", "Facebook"],
-      answer: "OpenAI"
-    },
-    {
-      question: "What is a chatbot?",
-      options: ["A talking robot", "A software that talks or chats with people", "A video game character", "A phone app"],
-      answer: "A software that talks or chats with people"
-    },
-    {
-      question: "AI helps in which of these areas?",
-      options: ["Weather prediction", "Medical diagnosis", "Self-driving cars", "All of the above"],
-      answer: "All of the above"
-    }
-  ];
-
-  let current = 0;
-  let score = 0;
-  const q = document.getElementById('question');
-  const opts = document.querySelectorAll('.option');
-  const scoreBox = document.getElementById('score');
-  const nextBtn = document.getElementById('nextBtn');
-
-  function loadQuestion() {
-    const data = quizData[current];
-    q.textContent = data.question;
-    opts.forEach((opt, i) => {
-      opt.textContent = data.options[i];
-      opt.className = 'option';
-      opt.style.pointerEvents = 'auto';
-    });
-    nextBtn.style.display = 'none';
-  }
-
-  function selectOption(el) {
-    const correct = quizData[current].answer;
-    if (el.textContent === correct) {
-      el.classList.add('correct');
-      score++;
-    } else {
-      el.classList.add('wrong');
-      opts.forEach(opt => {
-        if (opt.textContent === correct) opt.classList.add('correct');
-      });
-    }
-    opts.forEach(opt => opt.style.pointerEvents = 'none');
-    scoreBox.textContent = `Score: ${score}`;
-    nextBtn.style.display = 'inline-block';
-  }
-
-  function nextQuestion() {
-    current++;
-    if (current < quizData.length) {
-      loadQuestion();
-    } else {
-      q.textContent = "Quiz Complete!";
-      opts.forEach(opt => opt.style.display = "none");
-      nextBtn.style.display = "none";
-    }
-  }
-
-  loadQuestion();
-</script>
-
+  <div id="quiz-container">
+    <div id="question-container">
+      <h2 id="question">Loading...</h2>
+      <div id="options">
+        <!-- Options will be populated here -->
+      </div>
+    </div>
+    <div id="score">
+      <span>Score: <span id="score-display">0</span></span>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
