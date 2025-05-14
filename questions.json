@@ -1,0 +1,27 @@
+[
+  {
+    "question": "What does AI stand for?",
+    "options": ["Automated Internet", "Artificial Intelligence", "Automatic Input", "Advanced Innovation"],
+    "answer": "Artificial Intelligence"
+  },
+  {
+    "question": "Which of these is an example of AI we use daily?",
+    "options": ["Calculator", "Alarm Clock", "Voice Assistant (like Siri or Alexa)", "Flashlight"],
+    "answer": "Voice Assistant (like Siri or Alexa)"
+  },
+  {
+    "question": "Which company created ChatGPT?",
+    "options": ["Google", "Amazon", "OpenAI", "Facebook"],
+    "answer": "OpenAI"
+  },
+  {
+    "question": "What is a chatbot?",
+    "options": ["A talking robot", "A software that talks or chats with people", "A video game character", "A phone app"],
+    "answer": "A software that talks or chats with people"
+  },
+  {
+    "question": "AI helps in which of these areas?",
+    "options": ["Weather prediction", "Medical diagnosis", "Self-driving cars", "All of the above"],
+    "answer": "All of the above"
+  }
+]
