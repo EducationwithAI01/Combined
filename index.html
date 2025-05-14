@@ -1,337 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notepad 1, Notepad 2, Notepad 3, Notepad 4</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            gap: 50px;
-        }
-
-        /* Notepad 1 */
-        .container {
-            display: flex;
-            width: 400px;
-            height: 300px;
-            border: 1px solid #000;
-            position: relative;
-            left: 100px;
-        }
-        .number {
-            width: 50px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f0f0f0;
-            font-size: 24px;
-            font-weight: bold;
-            border-right: 1px solid #000;
-        }
-        .left {
-            width: 200px;
-            height: 300px;
-            border-right: 1px solid #000;
-        }
-        textarea {
-            width: 100%;
-            height: 100%;
-            font-size: 12px;
-            resize: none;
-            border: none;
-            outline: none;
-            padding: 5px;
-            box-sizing: border-box;
-        }
-        .right {
-            width: 200px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f0f0f0;
-            cursor: pointer;
-            text-align: center;
-            font-size: 14px;
-            border-radius: 5px;
-            padding: 10px;
-            word-wrap: break-word;
-            overflow: hidden;
-        }
-        .right:hover {
-            background: #ddd;
-        }
-
-        /* Notepad 2 */
-        .notepad2-container {
-            display: flex;
-            width: 400px;
-            height: 300px;
-            border: 1px solid #000;
-            position: relative;
-            top: 320px;
-            left: -350px;
-        }
-        .left2 {
-            width: 200px;
-            height: 300px;
-            border-right: 1px solid #000;
-        }
-        .right2 {
-            width: 200px;
-            height: 300px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            justify-content: center;
-            background: #f0f0f0;
-            cursor: pointer;
-            text-align: center;
-            font-size: 14px;
-            border-radius: 5px;
-            padding: 10px;
-            word-wrap: break-word;
-            overflow: hidden;
-        }
-        .right2:hover {
-            background: #ddd;
-        }
-
-        /* Notepad 3 */
-        .notepad3-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            background: white;
-            width: 400px;
-            position: absolute;
-            top: 20px;
-            left: 730px;
-        }
-        .notepad3-column {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .notepad3-textarea {
-            width: 250px;
-            height: 100px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            resize: none;
-        }
-        .notepad3-button {
-            padding: 10px 15px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .notepad3-compare-btn { background: #007bff; color: white; }
-        .notepad3-same-btn, .notepad3-not-same-btn { display: none; cursor: pointer; }
-        .notepad3-same-btn { background: #28a745; color: white; }
-        .notepad3-not-same-btn { background: #dc3545; color: white; }
-
-       /* Notepad 4 */
-       .notepad4-container {
-            display: flex;
-            width: 400px;
-            height: 200px;
-            border: 1px solid #000;
-            position: absolute;
-            top: 480px;
-            left: 730px;
-        }
-        .left4 {
-            width: 200px;
-            height: 200px;
-            border-right: 1px solid #000;
-        }
-        .right4 {
-            width: 200px;
-            height: 200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #f0f0f0;
-            cursor: pointer;
-            text-align: center;
-            font-size: 14px;
-            padding: 10px;
-            word-wrap: break-word;
-            overflow: hidden;
-        }
-        .right4:hover {
-            background: #ddd;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>AI Quiz Game</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .quiz-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 800px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    .question {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+    .option {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 15px 20px;
+      margin: 10px 0;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 20px;
+    }
+    .option:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+    .option.correct {
+      background: #4caf50;
+    }
+    .option.wrong {
+      background: #f44336;
+    }
+    #nextBtn {
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-size: 18px;
+      background: #ffc107;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      display: none;
+    }
+    #score {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Notepad 1 (Left Side) -->
-    <div class="container">
-        <div class="number" id="number">0</div>
-        <div class="left">
-            <textarea id="inputBox1" placeholder="Paste here..."></textarea>
-        </div>
-        <div class="right" id="right1" onclick="copyTopic1()">Click to copy</div>
-    </div>
+<div class="quiz-container">
+  <div class="question" id="question"></div>
+  <div class="option" onclick="selectOption(this)"></div>
+  <div class="option" onclick="selectOption(this)"></div>
+  <div class="option" onclick="selectOption(this)"></div>
+  <div class="option" onclick="selectOption(this)"></div>
+  <button id="nextBtn" onclick="nextQuestion()">Next</button>
+  <div id="score">Score: 0</div>
+</div>
 
-    <!-- Notepad 2 (Below Notepad 1) -->
-    <div class="notepad2-container">
-        <div class="left2">
-            <textarea id="inputBox2" placeholder="Paste here..."></textarea>
-        </div>
-        <div class="right2" id="right2" onclick="copyTopic2()">Click to copy</div>
-    </div>
+<script>
+  const quizData = [
+    {
+      question: "What does AI stand for?",
+      options: ["Automated Internet", "Artificial Intelligence", "Automatic Input", "Advanced Innovation"],
+      answer: "Artificial Intelligence"
+    },
+    {
+      question: "Which of these is an example of AI we use daily?",
+      options: ["Calculator", "Alarm Clock", "Voice Assistant (like Siri or Alexa)", "Flashlight"],
+      answer: "Voice Assistant (like Siri or Alexa)"
+    },
+    {
+      question: "Which company created ChatGPT?",
+      options: ["Google", "Amazon", "OpenAI", "Facebook"],
+      answer: "OpenAI"
+    },
+    {
+      question: "What is a chatbot?",
+      options: ["A talking robot", "A software that talks or chats with people", "A video game character", "A phone app"],
+      answer: "A software that talks or chats with people"
+    },
+    {
+      question: "AI helps in which of these areas?",
+      options: ["Weather prediction", "Medical diagnosis", "Self-driving cars", "All of the above"],
+      answer: "All of the above"
+    }
+  ];
 
-    <!-- Notepad 3 (Right Side) -->
-    <div class="notepad3-container">
-        <div class="notepad3-column">
-            <label>Previous Content:</label>
-            <textarea id="notepad3-previousContent" class="notepad3-textarea" placeholder="Enter previous content..."></textarea>
-            <button class="notepad3-button notepad3-compare-btn" onclick="notepad3CompareContent()">Compare</button>
-        </div>
-        <div class="notepad3-column">
-            <label>New Content:</label>
-            <textarea id="notepad3-newContent" class="notepad3-textarea" placeholder="Enter new content..."></textarea>
-            <button id="notepad3-sameBtn" class="notepad3-button notepad3-same-btn" onclick="notepad3CopyToClipboard('Same')">Same</button>
-            <button id="notepad3-notSameBtn" class="notepad3-button notepad3-not-same-btn" onclick="notepad3CopyToClipboard('Not Same')">Not Same</button>
-        </div>
-    </div>
+  let current = 0;
+  let score = 0;
+  const q = document.getElementById('question');
+  const opts = document.querySelectorAll('.option');
+  const scoreBox = document.getElementById('score');
+  const nextBtn = document.getElementById('nextBtn');
 
-       <!-- Notepad 4 -->
-       <div class="notepad4-container">
-        <div class="left4">
-            <textarea id="inputBox4" placeholder="Enter topics here..."></textarea>
-        </div>
-        <div class="right4" id="right4" onclick="copyTopic4()">Click to copy</div>
-    </div>
+  function loadQuestion() {
+    const data = quizData[current];
+    q.textContent = data.question;
+    opts.forEach((opt, i) => {
+      opt.textContent = data.options[i];
+      opt.className = 'option';
+      opt.style.pointerEvents = 'auto';
+    });
+    nextBtn.style.display = 'none';
+  }
 
-    <script>
-        // Notepad 1 Functionality
-        let topics1 = [];
-        let currentIndex1 = 0;
+  function selectOption(el) {
+    const correct = quizData[current].answer;
+    if (el.textContent === correct) {
+      el.classList.add('correct');
+      score++;
+    } else {
+      el.classList.add('wrong');
+      opts.forEach(opt => {
+        if (opt.textContent === correct) opt.classList.add('correct');
+      });
+    }
+    opts.forEach(opt => opt.style.pointerEvents = 'none');
+    scoreBox.textContent = `Score: ${score}`;
+    nextBtn.style.display = 'inline-block';
+  }
 
-        document.getElementById('inputBox1').addEventListener('input', function() {
-            let content = this.value;
-            topics1 = content.split("\n").filter(line => line.trim() !== '');
-            currentIndex1 = 0;
-            updateTopicCount();
-            showNextTopic1();
-        });
+  function nextQuestion() {
+    current++;
+    if (current < quizData.length) {
+      loadQuestion();
+    } else {
+      q.textContent = "Quiz Complete!";
+      opts.forEach(opt => opt.style.display = "none");
+      nextBtn.style.display = "none";
+    }
+  }
 
-        function showNextTopic1() {
-            let display = document.getElementById('right1');
-            let currentTopic = currentIndex1 < topics1.length ? topics1[currentIndex1] : "No more topics";
-            currentTopic = currentTopic.replace(/^\d+\.\s*/, '');
-            display.innerText = currentTopic;
-            document.getElementById('inputBox1').value = topics1.slice(currentIndex1).join("\n");
-        }
-
-        function copyTopic1() {
-            if (currentIndex1 < topics1.length) {
-                let currentTopic = topics1[currentIndex1];
-                currentTopic = currentTopic.replace(/^\d+\.\s*/, '');
-                navigator.clipboard.writeText(currentTopic).then(() => {
-                    currentIndex1++;
-                    updateTopicCount();
-                    showNextTopic1();
-                });
-            }
-        }
-
-        function updateTopicCount() {
-            document.getElementById('number').innerText = topics1.length - currentIndex1;
-        }
-
-        // Notepad 2 Functionality
-        let topics2 = [];
-        let currentIndex2 = 0;
-
-        document.getElementById('inputBox2').addEventListener('input', function() {
-            let content = this.value;
-            topics2 = content.split("\n").filter(line => line.trim() !== '');
-            currentIndex2 = 0;
-            showNextTopic2();
-        });
-
-        function showNextTopic2() {
-            let display = document.getElementById('right2');
-            let topicsToShow = topics2.slice(currentIndex2, currentIndex2 + 20);
-            let displayText = topicsToShow.join("<br><br>");
-            display.innerHTML = displayText;
-            document.getElementById('inputBox2').value = topics2.slice(currentIndex2 + 20).join("\n");
-        }
-
-        function copyTopic2() {
-            if (currentIndex2 < topics2.length) {
-                let topicsToCopy = topics2.slice(currentIndex2, currentIndex2 + 20).join("\n");
-                navigator.clipboard.writeText(topicsToCopy).then(() => {
-                    currentIndex2 += 20;
-                    showNextTopic2();
-                });
-            }
-        }
-
-        // Notepad 3 Functionality
-        function notepad3CompareContent() {
-            let prevText = document.getElementById('notepad3-previousContent').value.trim();
-            let newText = document.getElementById('notepad3-newContent').value.trim();
-
-            if (newText === prevText) {
-                document.getElementById('notepad3-sameBtn').style.display = 'block';
-                document.getElementById('notepad3-notSameBtn').style.display = 'none';
-            } else {
-                document.getElementById('notepad3-sameBtn').style.display = 'none';
-                document.getElementById('notepad3-notSameBtn').style.display = 'block';
-            }
-        }
-
-        function notepad3CopyToClipboard(text) {
-            navigator.clipboard.writeText(text);
-        }
-
-            // Notepad 4 Functionality
-            let topics4 = [];
-        let currentIndex4 = 0;
-
-        document.getElementById('inputBox4').addEventListener('input', function() {
-            let content = this.value;
-            topics4 = content.split("\n").filter(line => line.trim() !== '');
-            currentIndex4 = 0;
-            showNextTopic4();
-        });
-
-        function showNextTopic4() {
-            let display = document.getElementById('right4');
-            let currentTopic = currentIndex4 < topics4.length ? topics4[currentIndex4] : "No more topics";
-            display.innerText = currentTopic;
-            document.getElementById('inputBox4').value = topics4.slice(currentIndex4).join("\n");
-        }
-
-        function copyTopic4() {
-            if (currentIndex4 < topics4.length) {
-                let currentTopic = topics4[currentIndex4];
-                navigator.clipboard.writeText(currentTopic).then(() => {
-                    currentIndex4++;
-                    showNextTopic4();
-                });
-            }
-        }
-    </script>
+  loadQuestion();
+</script>
 
 </body>
 </html>
