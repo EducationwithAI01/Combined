@@ -1,18 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paragraph to Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #quiz-container {
+      display: none;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
 <body>
-  <div id="content-container">
-    <!-- Paragraph Section -->
-    <div id="paragraph-container">
-      <p id="paragraph-text">Loading paragraph...</p>
-      <button id="continueBtn">Continue to Quiz</button>
-    </div>
-
-    <!-- Quiz Section (Initially Hidden) -->
-    <div id="quiz-container" style="display: none;">
-      <h2 id="question">Question</h2>
-      <div id="options"></div>
-      <div id="score">Score: <span id="score-display">0</span></div>
-    </div>
+  <div id="paragraph-container">
+    <p id="paragraph">Loading paragraph...</p>
+    <button id="continue-btn">Continue to Quiz</button>
   </div>
 
-  <script src="script.js"></script>
+  <div id="quiz-container">
+    <div id="question-box"></div>
+    <button id="next-btn">Next Question</button>
+  </div>
+
+  <script>
+    let contentData = [];
+    let currentParagraphIndex = 0;
+    let currentQuestionIndex = 0;
+
+    const paragraphElement = document.getElementById("paragraph");
+    const paragraphContainer = document.getElementById("paragraph-container");
+    const continueBtn = document.getElementById("continue-btn");
+    const quizContainer = document.getElementById("quiz-container");
+    const questionBox = document.getElementById("question-box");
+    const nextBtn = document.getElementById("next-btn");
+
+    fetch("content.json")
+      .then((res) => res.json())
+      .then((data) => {
+        contentData = data;
+        paragraphElement.textContent = contentData[currentParagraphIndex].paragraph;
+      });
+
+    continueBtn.addEventListener("click", () => {
+      paragraphContainer.style.display = "none";
+      quizContainer.style.display = "block";
+      showQuestion();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentQuestionIndex++;
+      const currentSet = contentData[currentParagraphIndex];
+      if (currentQuestionIndex >= currentSet.questions.length) {
+        currentParagraphIndex++;
+        currentQuestionIndex = 0;
+        if (currentParagraphIndex < contentData.length) {
+          paragraphElement.textContent = contentData[currentParagraphIndex].paragraph;
+          paragraphContainer.style.display = "block";
+          quizContainer.style.display = "none";
+        } else {
+          quizContainer.innerHTML = "<p>Quiz complete!</p>";
+        }
+      } else {
+        showQuestion();
+      }
+    });
+
+    function showQuestion() {
+      const q = contentData[currentParagraphIndex].questions[currentQuestionIndex];
+      questionBox.innerHTML = `
+        <div class="question">
+          <p><strong>Q${currentQuestionIndex + 1}:</strong> ${q.question}</p>
+          ${q.options.map(option => `<label><input type="radio" name="q" /> ${option}</label><br>`).join("")}
+        </div>
+      `;
+    }
+  </script>
 </body>
+</html>
