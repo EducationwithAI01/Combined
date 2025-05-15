@@ -2,18 +2,21 @@ let quizData = [];
 let currentQuestion = 0;
 let score = 0;
 
-// Load quiz data but don't start yet
-fetch('questions.json')
-  .then(res => res.json())
-  .then(data => {
-    quizData = data;
-    // Wait for start button
-    document.getElementById('startBtn').onclick = () => {
-      document.getElementById('intro').style.display = 'none';
-      document.getElementById('quiz-container').style.display = 'block';
-      loadQuestion();
-    };
-  });
+// Wait until DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('questions.json')
+    .then(res => res.json())
+    .then(data => {
+      quizData = data;
+      const startBtn = document.getElementById('startBtn');
+
+      startBtn.addEventListener('click', () => {
+        document.getElementById('intro').style.display = 'none';
+        document.getElementById('quiz-container').style.display = 'block';
+        loadQuestion();
+      });
+    });
+});
 
 function loadQuestion() {
   if (currentQuestion >= quizData.length) {
