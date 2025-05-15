@@ -26,66 +26,36 @@
         "question": "What is one thing AI can do?",
         "options": ["Eat food", "Paint walls", "Recognize images", "Sweep floors"],
         "answer": "Recognize images"
-  }
-    ]
-  },
-  {
-    "paragraph": "Machine Learning is a field where machines learn from data and make decisions without explicit programming. It includes types like supervised, unsupervised, and reinforcement learning.",
-    "questions": [
-      {
-        "question": "What is Machine Learning?",
-        "options": ["Programming robots", "Teaching machines to learn from data", "Building websites", "Manual data entry"],
-        "answer": "Teaching machines to learn from data"
-      },
-      {
-        "question": "Who is known as the father of Machine Learning?",
-        "options": ["Alan Turing", "Geoffrey Hinton", "Andrew Ng", "Elon Musk"],
-        "answer": "Geoffrey Hinton"
-      },
-      {
-        "question": "Which of the following is a type of Machine Learning?",
-        "options": ["Deep Learning", "Static Learning", "Slow Learning", "Shallow Learning"],
-        "answer": "Deep Learning"
-      },
-      {
-        "question": "What are the three main types of Machine Learning?",
-        "options": ["Supervised, Unsupervised, Reinforcement", "Fast, Medium, Slow", "Automatic, Manual, Robotic", "Basic, Intermediate, Advanced"],
-        "answer": "Supervised, Unsupervised, Reinforcement"
-      },
-      {
-        "question": "In supervised learning, what does the model learn from?",
-        "options": ["Random noise", "Labeled data", "Unlabeled data", "Pre-trained weights"],
-        "answer": "Labeled data"
       }
     ]
   },
   {
-    "paragraph": "Machine Learning is used in recommendation systems, fraud detection, and self-driving cars. Understanding how algorithms work helps solve real-world problems using data.",
+    "paragraph": "AI systems learn from data through a process called training, where algorithms analyze patterns and make predictions. This process can be supervised, where the data includes correct answers, or unsupervised, where the system finds patterns without labels. One of the key goals in AI is to make accurate decisions based on new, unseen data. Over time, well-trained AI models can become highly efficient at tasks like voice recognition, translation, and even diagnosing diseases.",
     "questions": [
       {
-        "question": "Which ML algorithm is best for classification problems?",
-        "options": ["K-Means", "Linear Regression", "Support Vector Machine", "Apriori"],
-        "answer": "Support Vector Machine"
+        "question": "What is the process of teaching AI using data called?",
+        "options": ["Painting", "Training", "Programming", "Surfing"],
+        "answer": "Training"
       },
       {
-        "question": "What is overfitting in machine learning?",
-        "options": ["Model performs well on all data", "Model performs well on training but poorly on new data", "Model never trains", "Model predicts randomly"],
-        "answer": "Model performs well on training but poorly on new data"
+        "question": "What type of learning uses labeled data?",
+        "options": ["Supervised learning", "Unsupervised learning", "Reinforcement learning", "Random learning"],
+        "answer": "Supervised learning"
       },
       {
-        "question": "Which one is a real-world application of ML?",
-        "options": ["Predicting stock prices", "Drawing cartoons", "Fixing printers", "Packing boxes"],
-        "answer": "Predicting stock prices"
+        "question": "What does unsupervised learning do?",
+        "options": ["Ignores data", "Uses correct answers", "Finds patterns in unlabeled data", "Deletes data"],
+        "answer": "Finds patterns in unlabeled data"
       },
       {
-        "question": "Which data is used in unsupervised learning?",
-        "options": ["Labeled", "Unlabeled", "Corrupted", "Structured"],
-        "answer": "Unlabeled"
+        "question": "What is the goal of training an AI model?",
+        "options": ["Store more data", "Perform faster searches", "Make accurate decisions", "Replace all humans"],
+        "answer": "Make accurate decisions"
       },
       {
-        "question": "Which is a reinforcement learning term?",
-        "options": ["Epoch", "Label", "Reward", "Loss"],
-        "answer": "Reward"
+        "question": "Which of these tasks can AI perform?",
+        "options": ["Voice recognition", "Washing dishes", "Flying a kite", "Cooking meals"],
+        "answer": "Voice recognition"
       }
     ]
   }
