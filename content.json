@@ -21,12 +21,13 @@
         "question": "Which application uses AI in daily life?",
         "options": ["Pencil", "Virtual assistant", "Typewriter", "Calculator"],
         "answer": "Virtual assistant"
-      }
       },
       {
         "question": "What is one thing AI can do?",
         "options": ["Eat food", "Paint walls", "Recognize images", "Sweep floors"],
         "answer": "Recognize images"
+  }
+    ]
   },
   {
     "paragraph": "Machine Learning is a field where machines learn from data and make decisions without explicit programming. It includes types like supervised, unsupervised, and reinforcement learning.",
