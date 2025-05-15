@@ -21,6 +21,7 @@
         "question": "Which application uses AI in daily life?",
         "options": ["Pencil", "Virtual assistant", "Typewriter", "Calculator"],
         "answer": "Virtual assistant"
+      }
       },
       {
         "question": "What is one thing AI can do?",
