@@ -1,43 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Paragraph Quiz</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #f9f9f9;
-    }
-    #quiz-container {
-      display: none;
-    }
-    button {
-      display: block;
-      margin: 8px 0;
-      padding: 10px;
-      font-size: 16px;
-      width: 100%;
-    }
-  </style>
-</head>
 <body>
+  <div id="content-container">
+    <!-- Paragraph Section -->
+    <div id="paragraph-container">
+      <p id="paragraph-text">Loading paragraph...</p>
+      <button id="continueBtn">Continue to Quiz</button>
+    </div>
 
-  <div id="intro">
-    <h2>Welcome to the Quiz</h2>
-    <p>This quiz presents a paragraph followed by 5 questions. Let's begin!</p>
-    <button id="startBtn">Start Quiz</button>
-  </div>
-
-  <div id="quiz-container">
-    <p id="paragraph"></p>
-    <h3 id="question"></h3>
-    <div id="options"></div>
-    <p>Score: <span id="score-display">0</span></p>
+    <!-- Quiz Section (Initially Hidden) -->
+    <div id="quiz-container" style="display: none;">
+      <h2 id="question">Question</h2>
+      <div id="options"></div>
+      <div id="score">Score: <span id="score-display">0</span></div>
+    </div>
   </div>
 
   <script src="script.js"></script>
 </body>
-</html>
