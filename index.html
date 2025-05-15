@@ -2,32 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Quiz</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Paragraph Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    #quiz-container {
+      display: none;
+    }
+    button {
+      display: block;
+      margin: 8px 0;
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Introduction Section -->
   <div id="intro">
-    <h2>Introduction to Machine Learning</h2>
-    <p>
-      Machine Learning is a field of computer science where machines are taught to learn from data and make decisions without being explicitly programmed. It gained popularity through pioneers like Geoffrey Hinton, often called the father of modern Machine Learning. One important subfield is Deep Learning, which uses neural networks to model complex patterns. Machine Learning is generally divided into three types: supervised, unsupervised, and reinforcement learning. In supervised learning, the model is trained on labeled data, meaning the input comes with the correct output, helping the machine learn the relationship between the two.
-    </p>
+    <h2>Welcome to the Quiz</h2>
+    <p>This quiz presents a paragraph followed by 5 questions. Let's begin!</p>
     <button id="startBtn">Start Quiz</button>
   </div>
 
-  <!-- Quiz Container (Initially Hidden) -->
-  <div id="quiz-container" style="display: none;">
-    <div id="question-container">
-      <h2 id="question">Loading...</h2>
-      <div id="options">
-        <!-- Options will be populated here -->
-      </div>
-    </div>
-    <div id="score">
-      <span>Score: <span id="score-display">0</span></span>
-    </div>
+  <div id="quiz-container">
+    <p id="paragraph"></p>
+    <h3 id="question"></h3>
+    <div id="options"></div>
+    <p>Score: <span id="score-display">0</span></p>
   </div>
 
   <script src="script.js"></script>
