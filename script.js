@@ -1,63 +1,65 @@
-let data = [];
-let currentBlock = 0;
-let currentQuestion = 0;
+let currentQuizIndex = 0;
+let currentQuestionIndex = 0;
 let score = 0;
 
-// Load JSON on DOM ready
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("content.json")
-    .then(res => res.json())
-    .then(json => {
-      data = json;
-      showParagraph();
+function loadQuestion() {
+  const currentQuiz = questionsData[currentQuizIndex];
+  const questionData = currentQuiz.questions[currentQuestionIndex];
+  const questionEl = document.getElementById("question");
+  const optionsEl = document.getElementById("options");
+
+  questionEl.textContent = questionData.question;
+  optionsEl.innerHTML = "";
+
+  questionData.options.forEach(option => {
+    const btn = document.createElement("button");
+    btn.className = "option-card";
+    btn.textContent = option;
+
+    btn.addEventListener("click", () => {
+      // Disable all buttons
+      document.querySelectorAll(".option-card").forEach(b => b.disabled = true);
+
+      const isCorrect = option === questionData.answer;
+      if (isCorrect) {
+        btn.classList.add("correct");
+        score++;
+      } else {
+        btn.classList.add("incorrect");
+        document.querySelectorAll(".option-card").forEach(b => {
+          if (b.textContent === questionData.answer) {
+            b.classList.add("correct");
+          }
+        });
+      }
+
+      // Move to next question after a short delay
+      setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < currentQuiz.questions.length) {
+          loadQuestion();
+        } else {
+          currentQuizIndex++;
+          if (currentQuizIndex < questionsData.length) {
+            currentQuestionIndex = 0;
+            loadParagraph();
+            loadQuestion();
+          } else {
+            showScore();
+          }
+        }
+      }, 1000);
     });
 
-  document.getElementById("continueBtn").addEventListener("click", () => {
-    document.getElementById("paragraph-container").style.display = "none";
-    document.getElementById("quiz-container").style.display = "block";
-    loadQuestion();
+    optionsEl.appendChild(btn);
   });
-});
-
-function showParagraph() {
-  const para = data[currentBlock].paragraph;
-  document.getElementById("paragraph-text").innerText = para;
 }
 
-function loadQuestion() {
-  const questions = data[currentBlock].questions;
-  if (currentQuestion >= questions.length) {
-    // Next block
-    currentBlock++;
-    currentQuestion = 0;
+function showScore() {
+  const quizContainer = document.getElementById("quiz");
+  quizContainer.innerHTML = `<h2>Your score: ${score}/${getTotalQuestions()}</h2>`;
+}
 
-    if (currentBlock >= data.length) {
-      document.getElementById("quiz-container").innerHTML = `<h2>Quiz Completed! Final Score: ${score}</h2>`;
-      return;
-    }
-
-    document.getElementById("quiz-container").style.display = "none";
-    document.getElementById("paragraph-container").style.display = "block";
-    showParagraph();
-    return;
-  }
-
-  const q = questions[currentQuestion];
-  document.getElementById("question").innerText = q.question;
-  const optionsDiv = document.getElementById("options");
-  optionsDiv.innerHTML = "";
-
-  q.options.forEach(opt => {
-    const btn = document.createElement("button");
-    btn.innerText = opt;
-    btn.onclick = () => {
-      if (opt === q.answer) {
-        score++;
-        document.getElementById("score-display").innerText = score;
-      }
-      currentQuestion++;
-      loadQuestion();
-    };
-    optionsDiv.appendChild(btn);
-  });
+function getTotalQuestions() {
+  return questionsData.reduce((total, q) => total + q.questions.length, 0);
 }
