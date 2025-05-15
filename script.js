@@ -1,25 +1,23 @@
-let quizData = [];
+let quizContent = [];
+let currentGroup = 0;
 let currentQuestion = 0;
 let score = 0;
 
-// Wait until DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('questions.json')
+  fetch('content.json')
     .then(res => res.json())
     .then(data => {
-      quizData = data;
-      const startBtn = document.getElementById('startBtn');
-
-      startBtn.addEventListener('click', () => {
+      quizContent = data;
+      document.getElementById('startBtn').addEventListener('click', () => {
         document.getElementById('intro').style.display = 'none';
         document.getElementById('quiz-container').style.display = 'block';
-        loadQuestion();
+        loadGroup();
       });
     });
 });
 
-function loadQuestion() {
-  if (currentQuestion >= quizData.length) {
+function loadGroup() {
+  if (currentGroup >= quizContent.length) {
     document.body.innerHTML = `
       <div id="quiz-container">
         <h2>Your Final Score: ${score}</h2>
@@ -28,7 +26,23 @@ function loadQuestion() {
     return;
   }
 
-  const questionObj = quizData[currentQuestion];
+  currentQuestion = 0;
+  const group = quizContent[currentGroup];
+  document.getElementById('paragraph').innerText = group.paragraph;
+  loadQuestion();
+}
+
+function loadQuestion() {
+  const group = quizContent[currentGroup];
+  const questions = group.questions;
+
+  if (currentQuestion >= questions.length) {
+    currentGroup++;
+    loadGroup();
+    return;
+  }
+
+  const questionObj = questions[currentQuestion];
   const questionText = document.getElementById('question');
   const optionsDiv = document.getElementById('options');
 
@@ -44,8 +58,8 @@ function loadQuestion() {
 }
 
 function checkAnswer(selected) {
-  const correctAnswer = quizData[currentQuestion].answer;
-  if (selected === correctAnswer) {
+  const correct = quizContent[currentGroup].questions[currentQuestion].answer;
+  if (selected === correct) {
     score++;
     document.getElementById('score-display').innerText = score;
   }
