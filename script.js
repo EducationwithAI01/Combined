@@ -2,11 +2,17 @@ let quizData = [];
 let currentQuestion = 0;
 let score = 0;
 
+// Load quiz data but don't start yet
 fetch('questions.json')
   .then(res => res.json())
   .then(data => {
     quizData = data;
-    loadQuestion();
+    // Wait for start button
+    document.getElementById('startBtn').onclick = () => {
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('quiz-container').style.display = 'block';
+      loadQuestion();
+    };
   });
 
 function loadQuestion() {
