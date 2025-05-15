@@ -23,7 +23,7 @@
     "question": "AI helps in which of these areas?",
     "options": ["Weather prediction", "Medical diagnosis", "Self-driving cars", "All of the above"],
     "answer": "All of the above"
-}
+},
   {
     "question": "What is Machine Learning?",
     "options": ["Programming robots", "Teaching machines to learn from data", "Building websites", "Manual data entry"],
