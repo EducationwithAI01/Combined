@@ -1,5 +1,33 @@
 [
   {
+    "paragraph": "Artificial Intelligence (AI) is a branch of computer science focused on creating systems that can perform tasks requiring human intelligence. These tasks include understanding language, recognizing images, solving problems, and making decisions. AI is used in many everyday applications like virtual assistants, recommendation systems, and self-driving cars. It often relies on large amounts of data and algorithms to learn and improve over time, making it smarter with more use.",
+    "questions": [
+      {
+        "question": "What does Artificial Intelligence aim to do?",
+        "options": ["Replace computers", "Perform tasks requiring human intelligence", "Create websites", "Store big data"],
+        "answer": "Perform tasks requiring human intelligence"
+      },
+      {
+        "question": "Which of the following is an example of AI?",
+        "options": ["Microwave oven", "Alarm clock", "Self-driving car", "Light bulb"],
+        "answer": "Self-driving car"
+      },
+      {
+        "question": "What does AI often rely on to improve?",
+        "options": ["More hardware", "Random guessing", "Data and algorithms", "Manual updates"],
+        "answer": "Data and algorithms"
+      },
+      {
+        "question": "Which application uses AI in daily life?",
+        "options": ["Pencil", "Virtual assistant", "Typewriter", "Calculator"],
+        "answer": "Virtual assistant"
+      },
+      {
+        "question": "What is one thing AI can do?",
+        "options": ["Eat food", "Paint walls", "Recognize images", "Sweep floors"],
+        "answer": "Recognize images"
+  },
+  {
     "paragraph": "Machine Learning is a field where machines learn from data and make decisions without explicit programming. It includes types like supervised, unsupervised, and reinforcement learning.",
     "questions": [
       {
