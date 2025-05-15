@@ -1,68 +1,63 @@
-let quizContent = [];
-let currentGroup = 0;
+let data = [];
+let currentBlock = 0;
 let currentQuestion = 0;
 let score = 0;
 
-document.addEventListener('DOMContentLoaded', () => {
-  fetch('content.json')
+// Load JSON on DOM ready
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("content.json")
     .then(res => res.json())
-    .then(data => {
-      quizContent = data;
-      document.getElementById('startBtn').addEventListener('click', () => {
-        document.getElementById('intro').style.display = 'none';
-        document.getElementById('quiz-container').style.display = 'block';
-        loadGroup();
-      });
+    .then(json => {
+      data = json;
+      showParagraph();
     });
+
+  document.getElementById("continueBtn").addEventListener("click", () => {
+    document.getElementById("paragraph-container").style.display = "none";
+    document.getElementById("quiz-container").style.display = "block";
+    loadQuestion();
+  });
 });
 
-function loadGroup() {
-  if (currentGroup >= quizContent.length) {
-    document.body.innerHTML = `
-      <div id="quiz-container">
-        <h2>Your Final Score: ${score}</h2>
-      </div>
-    `;
-    return;
-  }
-
-  currentQuestion = 0;
-  const group = quizContent[currentGroup];
-  document.getElementById('paragraph').innerText = group.paragraph;
-  loadQuestion();
+function showParagraph() {
+  const para = data[currentBlock].paragraph;
+  document.getElementById("paragraph-text").innerText = para;
 }
 
 function loadQuestion() {
-  const group = quizContent[currentGroup];
-  const questions = group.questions;
-
+  const questions = data[currentBlock].questions;
   if (currentQuestion >= questions.length) {
-    currentGroup++;
-    loadGroup();
+    // Next block
+    currentBlock++;
+    currentQuestion = 0;
+
+    if (currentBlock >= data.length) {
+      document.getElementById("quiz-container").innerHTML = `<h2>Quiz Completed! Final Score: ${score}</h2>`;
+      return;
+    }
+
+    document.getElementById("quiz-container").style.display = "none";
+    document.getElementById("paragraph-container").style.display = "block";
+    showParagraph();
     return;
   }
 
-  const questionObj = questions[currentQuestion];
-  const questionText = document.getElementById('question');
-  const optionsDiv = document.getElementById('options');
+  const q = questions[currentQuestion];
+  document.getElementById("question").innerText = q.question;
+  const optionsDiv = document.getElementById("options");
+  optionsDiv.innerHTML = "";
 
-  questionText.innerText = questionObj.question;
-  optionsDiv.innerHTML = '';
-
-  questionObj.options.forEach(option => {
-    const button = document.createElement('button');
-    button.innerText = option;
-    button.onclick = () => checkAnswer(option);
-    optionsDiv.appendChild(button);
+  q.options.forEach(opt => {
+    const btn = document.createElement("button");
+    btn.innerText = opt;
+    btn.onclick = () => {
+      if (opt === q.answer) {
+        score++;
+        document.getElementById("score-display").innerText = score;
+      }
+      currentQuestion++;
+      loadQuestion();
+    };
+    optionsDiv.appendChild(btn);
   });
-}
-
-function checkAnswer(selected) {
-  const correct = quizContent[currentGroup].questions[currentQuestion].answer;
-  if (selected === correct) {
-    score++;
-    document.getElementById('score-display').innerText = score;
-  }
-  currentQuestion++;
-  loadQuestion();
 }
