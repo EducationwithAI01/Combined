@@ -23,5 +23,105 @@
     "question": "AI helps in which of these areas?",
     "options": ["Weather prediction", "Medical diagnosis", "Self-driving cars", "All of the above"],
     "answer": "All of the above"
+}
+  {
+    "question": "What is Machine Learning?",
+    "options": ["Programming robots", "Teaching machines to learn from data", "Building websites", "Manual data entry"],
+    "answer": "Teaching machines to learn from data"
+  },
+  {
+    "question": "Who is known as the father of Machine Learning?",
+    "options": ["Alan Turing", "Geoffrey Hinton", "Andrew Ng", "Elon Musk"],
+    "answer": "Geoffrey Hinton"
+  },
+  {
+    "question": "Which of the following is a type of Machine Learning?",
+    "options": ["Deep Learning", "Static Learning", "Slow Learning", "Shallow Learning"],
+    "answer": "Deep Learning"
+  },
+  {
+    "question": "What are the three main types of Machine Learning?",
+    "options": ["Supervised, Unsupervised, Reinforcement", "Fast, Medium, Slow", "Automatic, Manual, Robotic", "Basic, Intermediate, Advanced"],
+    "answer": "Supervised, Unsupervised, Reinforcement"
+  },
+  {
+    "question": "In supervised learning, what does the model learn from?",
+    "options": ["Random noise", "Labeled data", "Unlabeled data", "Pre-trained weights"],
+    "answer": "Labeled data"
+  },
+  {
+    "question": "Which algorithm is commonly used for classification?",
+    "options": ["K-Means", "K-Nearest Neighbors", "Linear Regression", "PCA"],
+    "answer": "K-Nearest Neighbors"
+  },
+  {
+    "question": "What is overfitting?",
+    "options": ["Model performs poorly on training data", "Model performs well on both training and test data", "Model memorizes training data and performs poorly on test data", "Model ignores the data"],
+    "answer": "Model memorizes training data and performs poorly on test data"
+  },
+  {
+    "question": "What is underfitting?",
+    "options": ["Model performs too well on test data", "Model fails to learn patterns in training data", "Model uses too many features", "Model overlearns noise"],
+    "answer": "Model fails to learn patterns in training data"
+  },
+  {
+    "question": "What is the goal of a loss function?",
+    "options": ["To increase the accuracy", "To increase the training data", "To measure model error", "To simplify the algorithm"],
+    "answer": "To measure model error"
+  },
+  {
+    "question": "What is gradient descent used for?",
+    "options": ["Data visualization", "Minimizing the loss function", "Increasing model complexity", "Sorting datasets"],
+    "answer": "Minimizing the loss function"
+  },
+  {
+    "question": "What does a confusion matrix evaluate?",
+    "options": ["Speed of training", "Accuracy of clustering", "Classification performance", "Regression slope"],
+    "answer": "Classification performance"
+  },
+  {
+    "question": "What is clustering in Machine Learning?",
+    "options": ["Splitting data", "Grouping similar data points", "Sorting features", "Predicting labels"],
+    "answer": "Grouping similar data points"
+  },
+  {
+    "question": "What is the purpose of feature scaling?",
+    "options": ["Remove columns", "Normalize values to a similar range", "Add more rows", "Increase training time"],
+    "answer": "Normalize values to a similar range"
+  },
+  {
+    "question": "Which technique reduces dimensions?",
+    "options": ["Logistic Regression", "PCA (Principal Component Analysis)", "Naive Bayes", "SVM"],
+    "answer": "PCA (Principal Component Analysis)"
+  },
+  {
+    "question": "What is a neural network inspired by?",
+    "options": ["Internet architecture", "Human brain", "Web servers", "Algorithms"],
+    "answer": "Human brain"
+  },
+  {
+    "question": "What is a common activation function in deep learning?",
+    "options": ["ReLU", "HTML", "SQL", "XOR"],
+    "answer": "ReLU"
+  },
+  {
+    "question": "What does “epoch” mean in training?",
+    "options": ["One complete pass through the full dataset", "A loss function", "A data column", "A type of neuron"],
+    "answer": "One complete pass through the full dataset"
+  },
+  {
+    "question": "Which language is most used in ML?",
+    "options": ["Java", "Python", "HTML", "Ruby"],
+    "answer": "Python"
+  },
+  {
+    "question": "What is TensorFlow?",
+    "options": ["A database", "A machine learning library", "An operating system", "A web browser"],
+    "answer": "A machine learning library"
+  },
+  {
+    "question": "What does “unsupervised learning” work with?",
+    "options": ["Labeled data", "No data", "Unlabeled data", "Manual input"],
+    "answer": "Unlabeled data"
   }
 ]
