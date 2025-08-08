@@ -1,162 +1,164 @@
-[
-  {
-    "name": "Technology",
-    "sentences": [
-      "Technology is the application of scientific knowledge for practical purposes.",
-      "It includes tools, machines, systems, and methods used to solve problems.",
-      "Modern technology impacts communication, transportation, healthcare, and more."
-    ]
-  },
-  {
-    "name": "Artificial Intelligence",
-    "sentences": [
-      "Artificial Intelligence is the simulation of human intelligence in machines.",
-      "AI can learn, reason, and make decisions using algorithms and data.",
-      "Applications of AI include chatbots, self-driving cars, and medical diagnostics."
-    ]
-  },
-  {
-    "name": "Climate Change",
-    "sentences": [
-      "Climate change refers to long-term shifts in global or regional climate patterns.",
-      "It is largely driven by human activities, especially the burning of fossil fuels.",
-      "Impacts include rising temperatures, sea-level rise, and extreme weather events."
-    ]
-  },
-  {
-    "name": "Renewable Energy",
-    "sentences": [
-      "Renewable energy comes from natural sources that are constantly replenished.",
-      "Examples include solar, wind, hydro, geothermal, and biomass energy.",
-      "It plays a key role in reducing greenhouse gas emissions."
-    ]
-  },
-  {
-    "name": "Space Exploration",
-    "sentences": [
-      "Space exploration is the investigation of outer space through astronomy and spacecraft.",
-      "It has led to discoveries about planets, stars, and galaxies.",
-      "Notable missions include the Apollo Moon landings and Mars rovers."
-    ]
-  },
-  {
-    "name": "Startups",
-    "sentences": [
-      "A startup is a young company founded to develop a unique product or service.",
-      "Startups often focus on innovation and rapid growth.",
-      "They usually face high risks but also high potential rewards."
-    ]
-  },
-  {
-    "name": "Blockchain",
-    "sentences": [
-      "Blockchain is a digital ledger technology for recording transactions securely.",
-      "It is decentralized and resistant to tampering.",
-      "Blockchain powers cryptocurrencies like Bitcoin and Ethereum."
-    ]
-  },
-  {
-    "name": "Virtual Reality",
-    "sentences": [
-      "Virtual Reality is a computer-generated simulation of a 3D environment.",
-      "Users can interact with it using VR headsets and controllers.",
-      "It is used in gaming, training, and education."
-    ]
-  },
-  {
-    "name": "Mental Health",
-    "sentences": [
-      "Mental health refers to emotional, psychological, and social well-being.",
-      "It affects how we think, feel, and behave in daily life.",
-      "Good mental health helps us cope with stress and maintain relationships."
-    ]
-  },
-  {
-    "name": "Nutrition",
-    "sentences": [
-      "Nutrition is the process of providing or obtaining the food necessary for health.",
-      "A balanced diet includes carbohydrates, proteins, fats, vitamins, and minerals.",
-      "Poor nutrition can lead to diseases and reduced quality of life."
-    ]
-  },
-  {
-    "name": "Economics",
-    "sentences": [
-      "Economics is the study of production, consumption, and distribution of resources.",
-      "It helps explain how individuals, businesses, and governments make decisions.",
-      "Economic systems include capitalism, socialism, and mixed economies."
-    ]
-  },
-  {
-    "name": "History",
-    "sentences": [
-      "History is the study of past events, particularly in human affairs.",
-      "It helps us understand cultural, political, and social developments.",
-      "Historical knowledge can guide future decisions."
-    ]
-  },
-  {
-    "name": "Philosophy",
-    "sentences": [
-      "Philosophy is the study of fundamental questions about existence, knowledge, and ethics.",
-      "It encourages critical thinking and reasoned argument.",
-      "Major branches include metaphysics, epistemology, and ethics."
-    ]
-  },
-  {
-    "name": "Art",
-    "sentences": [
-      "Art is the expression of human creativity and imagination.",
-      "It includes painting, sculpture, music, literature, and more.",
-      "Art can inspire, provoke thought, and reflect culture."
-    ]
-  },
-  {
-    "name": "Music",
-    "sentences": [
-      "Music is the art of arranging sounds in time to produce harmony and melody.",
-      "It can evoke emotions and connect people across cultures.",
-      "Music genres include classical, jazz, rock, pop, and hip-hop."
-    ]
-  },
-  {
-    "name": "Sports",
-    "sentences": [
-      "Sports are physical activities involving skill and competition.",
-      "They can be played individually or in teams.",
-      "Sports promote fitness, teamwork, and discipline."
-    ]
-  },
-  {
-    "name": "Travel",
-    "sentences": [
-      "Travel is the act of moving from one place to another, often for leisure or work.",
-      "It offers opportunities to experience new cultures and environments.",
-      "Popular travel types include adventure, cultural, and eco-tourism."
-    ]
-  },
-  {
-    "name": "Education",
-    "sentences": [
-      "Education is the process of acquiring knowledge, skills, and values.",
-      "It can take place in schools, universities, or through self-learning.",
-      "Education is a key driver of personal and societal growth."
-    ]
-  },
-  {
-    "name": "Health & Fitness",
-    "sentences": [
-      "Health and fitness involve maintaining physical and mental well-being.",
-      "Regular exercise and a balanced diet contribute to fitness.",
-      "Good health improves quality of life and longevity."
-    ]
-  },
-  {
-    "name": "Entrepreneurship",
-    "sentences": [
-      "Entrepreneurship is the process of starting and running a business.",
-      "Entrepreneurs identify opportunities and take risks to innovate.",
-      "It plays a vital role in economic growth and job creation."
-    ]
-  }
-]
+{
+  "topics": [
+    {
+      "name": "Technology",
+      "sentences": [
+        "Technology is the application of scientific knowledge for practical purposes.",
+        "It includes tools, machines, and systems that solve problems.",
+        "Modern technology impacts communication, transportation, and healthcare."
+      ]
+    },
+    {
+      "name": "Startup",
+      "sentences": [
+        "A startup is a young company founded to develop a unique product or service.",
+        "Startups often aim for rapid growth and innovation.",
+        "They usually face high risks but also potential high rewards."
+      ]
+    },
+    {
+      "name": "Artificial Intelligence",
+      "sentences": [
+        "Artificial intelligence is the simulation of human intelligence in machines.",
+        "AI can perform tasks that typically require human thinking, like decision-making.",
+        "Examples include chatbots, recommendation systems, and self-driving cars."
+      ]
+    },
+    {
+      "name": "Space Exploration",
+      "sentences": [
+        "Space exploration is the investigation of outer space using astronomy and space technology.",
+        "It has led to discoveries about planets, stars, and galaxies.",
+        "Missions like the Apollo moon landing and Mars rovers are famous examples."
+      ]
+    },
+    {
+      "name": "Climate Change",
+      "sentences": [
+        "Climate change refers to long-term shifts in temperatures and weather patterns.",
+        "It is largely driven by human activities, especially burning fossil fuels.",
+        "Its impacts include rising sea levels, extreme weather, and biodiversity loss."
+      ]
+    },
+    {
+      "name": "Blockchain",
+      "sentences": [
+        "Blockchain is a distributed digital ledger that records transactions securely.",
+        "It is the foundation of cryptocurrencies like Bitcoin.",
+        "Beyond finance, blockchain is used in supply chains and digital identity."
+      ]
+    },
+    {
+      "name": "Cybersecurity",
+      "sentences": [
+        "Cybersecurity is the practice of protecting systems, networks, and data from attacks.",
+        "Threats include hacking, phishing, and malware.",
+        "Good cybersecurity involves strong passwords, encryption, and monitoring."
+      ]
+    },
+    {
+      "name": "Robotics",
+      "sentences": [
+        "Robotics involves the design, construction, and use of robots.",
+        "Robots can perform repetitive tasks, dangerous jobs, or delicate operations.",
+        "They are used in manufacturing, healthcare, and even space exploration."
+      ]
+    },
+    {
+      "name": "Virtual Reality",
+      "sentences": [
+        "Virtual reality is a computer-generated simulation of a three-dimensional environment.",
+        "Users experience VR through headsets and controllers.",
+        "It is used in gaming, training, and therapy."
+      ]
+    },
+    {
+      "name": "Renewable Energy",
+      "sentences": [
+        "Renewable energy comes from sources that are naturally replenished.",
+        "Examples include solar, wind, hydro, and geothermal power.",
+        "It helps reduce greenhouse gas emissions and dependence on fossil fuels."
+      ]
+    },
+    {
+      "name": "Genetics",
+      "sentences": [
+        "Genetics is the study of genes and heredity in living organisms.",
+        "It helps us understand traits, diseases, and evolution.",
+        "Modern genetics enables technologies like CRISPR gene editing."
+      ]
+    },
+    {
+      "name": "Astronomy",
+      "sentences": [
+        "Astronomy is the scientific study of celestial objects and phenomena.",
+        "It explores planets, stars, galaxies, and the universe's origin.",
+        "Astronomy combines observation, theory, and technology."
+      ]
+    },
+    {
+      "name": "Psychology",
+      "sentences": [
+        "Psychology is the scientific study of the human mind and behavior.",
+        "It covers areas like cognition, emotion, and mental health.",
+        "Psychologists work in research, therapy, and education."
+      ]
+    },
+    {
+      "name": "Economics",
+      "sentences": [
+        "Economics studies how people and societies use resources.",
+        "It is divided into microeconomics and macroeconomics.",
+        "Economic theories help shape policies and business strategies."
+      ]
+    },
+    {
+      "name": "History",
+      "sentences": [
+        "History is the study of past events, especially human affairs.",
+        "It helps us understand cultural development and change.",
+        "Historical analysis relies on evidence from documents, artifacts, and oral traditions."
+      ]
+    },
+    {
+      "name": "Philosophy",
+      "sentences": [
+        "Philosophy is the study of fundamental questions about existence, knowledge, and ethics.",
+        "It encourages critical thinking and reasoning.",
+        "Major branches include metaphysics, epistemology, and ethics."
+      ]
+    },
+    {
+      "name": "Art",
+      "sentences": [
+        "Art is the expression of creativity through visual, auditory, or performance mediums.",
+        "It includes painting, sculpture, music, dance, and more.",
+        "Art often reflects cultural values and emotions."
+      ]
+    },
+    {
+      "name": "Mathematics",
+      "sentences": [
+        "Mathematics is the study of numbers, shapes, and patterns.",
+        "It is used in science, engineering, finance, and everyday problem-solving.",
+        "Mathematics includes areas like algebra, calculus, and statistics."
+      ]
+    },
+    {
+      "name": "Biology",
+      "sentences": [
+        "Biology is the scientific study of life and living organisms.",
+        "It covers topics like cells, evolution, ecosystems, and genetics.",
+        "Biology research informs medicine, conservation, and biotechnology."
+      ]
+    },
+    {
+      "name": "Literature",
+      "sentences": [
+        "Literature refers to written works, especially those with artistic value.",
+        "It includes fiction, poetry, drama, and essays.",
+        "Literature reflects society, history, and human experiences."
+      ]
+    }
+  ]
+}
