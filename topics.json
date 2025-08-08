@@ -1,21 +1,162 @@
-{
-    "topics": [
-      {
-        "name": "Technology",
-        "sentences": [
-          "Technology is the application of scientific knowledge for practical purposes.",
-          "It includes tools, machines, and systems that solve problems.",
-          "Modern technology impacts communication, transportation, and healthcare."
-        ]
-      },
-      {
-        "name": "Startup",
-        "sentences": [
-          "A startup is a young company founded to develop a unique product or service.",
-          "Startups often aim for rapid growth and innovation.",
-          "They usually face high risks but also potential high rewards."
-        ]
-      }
+[
+  {
+    "name": "Technology",
+    "sentences": [
+      "Technology is the application of scientific knowledge for practical purposes.",
+      "It includes tools, machines, systems, and methods used to solve problems.",
+      "Modern technology impacts communication, transportation, healthcare, and more."
+    ]
+  },
+  {
+    "name": "Artificial Intelligence",
+    "sentences": [
+      "Artificial Intelligence is the simulation of human intelligence in machines.",
+      "AI can learn, reason, and make decisions using algorithms and data.",
+      "Applications of AI include chatbots, self-driving cars, and medical diagnostics."
+    ]
+  },
+  {
+    "name": "Climate Change",
+    "sentences": [
+      "Climate change refers to long-term shifts in global or regional climate patterns.",
+      "It is largely driven by human activities, especially the burning of fossil fuels.",
+      "Impacts include rising temperatures, sea-level rise, and extreme weather events."
+    ]
+  },
+  {
+    "name": "Renewable Energy",
+    "sentences": [
+      "Renewable energy comes from natural sources that are constantly replenished.",
+      "Examples include solar, wind, hydro, geothermal, and biomass energy.",
+      "It plays a key role in reducing greenhouse gas emissions."
+    ]
+  },
+  {
+    "name": "Space Exploration",
+    "sentences": [
+      "Space exploration is the investigation of outer space through astronomy and spacecraft.",
+      "It has led to discoveries about planets, stars, and galaxies.",
+      "Notable missions include the Apollo Moon landings and Mars rovers."
+    ]
+  },
+  {
+    "name": "Startups",
+    "sentences": [
+      "A startup is a young company founded to develop a unique product or service.",
+      "Startups often focus on innovation and rapid growth.",
+      "They usually face high risks but also high potential rewards."
+    ]
+  },
+  {
+    "name": "Blockchain",
+    "sentences": [
+      "Blockchain is a digital ledger technology for recording transactions securely.",
+      "It is decentralized and resistant to tampering.",
+      "Blockchain powers cryptocurrencies like Bitcoin and Ethereum."
+    ]
+  },
+  {
+    "name": "Virtual Reality",
+    "sentences": [
+      "Virtual Reality is a computer-generated simulation of a 3D environment.",
+      "Users can interact with it using VR headsets and controllers.",
+      "It is used in gaming, training, and education."
+    ]
+  },
+  {
+    "name": "Mental Health",
+    "sentences": [
+      "Mental health refers to emotional, psychological, and social well-being.",
+      "It affects how we think, feel, and behave in daily life.",
+      "Good mental health helps us cope with stress and maintain relationships."
+    ]
+  },
+  {
+    "name": "Nutrition",
+    "sentences": [
+      "Nutrition is the process of providing or obtaining the food necessary for health.",
+      "A balanced diet includes carbohydrates, proteins, fats, vitamins, and minerals.",
+      "Poor nutrition can lead to diseases and reduced quality of life."
+    ]
+  },
+  {
+    "name": "Economics",
+    "sentences": [
+      "Economics is the study of production, consumption, and distribution of resources.",
+      "It helps explain how individuals, businesses, and governments make decisions.",
+      "Economic systems include capitalism, socialism, and mixed economies."
+    ]
+  },
+  {
+    "name": "History",
+    "sentences": [
+      "History is the study of past events, particularly in human affairs.",
+      "It helps us understand cultural, political, and social developments.",
+      "Historical knowledge can guide future decisions."
+    ]
+  },
+  {
+    "name": "Philosophy",
+    "sentences": [
+      "Philosophy is the study of fundamental questions about existence, knowledge, and ethics.",
+      "It encourages critical thinking and reasoned argument.",
+      "Major branches include metaphysics, epistemology, and ethics."
+    ]
+  },
+  {
+    "name": "Art",
+    "sentences": [
+      "Art is the expression of human creativity and imagination.",
+      "It includes painting, sculpture, music, literature, and more.",
+      "Art can inspire, provoke thought, and reflect culture."
+    ]
+  },
+  {
+    "name": "Music",
+    "sentences": [
+      "Music is the art of arranging sounds in time to produce harmony and melody.",
+      "It can evoke emotions and connect people across cultures.",
+      "Music genres include classical, jazz, rock, pop, and hip-hop."
+    ]
+  },
+  {
+    "name": "Sports",
+    "sentences": [
+      "Sports are physical activities involving skill and competition.",
+      "They can be played individually or in teams.",
+      "Sports promote fitness, teamwork, and discipline."
+    ]
+  },
+  {
+    "name": "Travel",
+    "sentences": [
+      "Travel is the act of moving from one place to another, often for leisure or work.",
+      "It offers opportunities to experience new cultures and environments.",
+      "Popular travel types include adventure, cultural, and eco-tourism."
+    ]
+  },
+  {
+    "name": "Education",
+    "sentences": [
+      "Education is the process of acquiring knowledge, skills, and values.",
+      "It can take place in schools, universities, or through self-learning.",
+      "Education is a key driver of personal and societal growth."
+    ]
+  },
+  {
+    "name": "Health & Fitness",
+    "sentences": [
+      "Health and fitness involve maintaining physical and mental well-being.",
+      "Regular exercise and a balanced diet contribute to fitness.",
+      "Good health improves quality of life and longevity."
+    ]
+  },
+  {
+    "name": "Entrepreneurship",
+    "sentences": [
+      "Entrepreneurship is the process of starting and running a business.",
+      "Entrepreneurs identify opportunities and take risks to innovate.",
+      "It plays a vital role in economic growth and job creation."
     ]
   }
-  
+]
