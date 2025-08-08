@@ -1,85 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Paragraph to Quiz</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    #quiz-container {
-      display: none;
-    }
-    .question {
-      margin-bottom: 20px;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topics</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="paragraph-container">
-    <p id="paragraph">Loading paragraph...</p>
-    <button id="continue-btn">Continue to Quiz</button>
-  </div>
+  <div id="app">
+    <!-- Homepage -->
+    <div id="homepage">
+      <h1>Select a Topic</h1>
+      <div id="topics"></div>
+    </div>
 
-  <div id="quiz-container">
-    <div id="question-box"></div>
-    <button id="next-btn">Next Question</button>
+    <!-- Topic view -->
+    <div id="topic-view" style="display: none;">
+      <button id="back-to-home">Go to Homepage</button>
+      <div id="sentence-container"></div>
+      <div class="nav-buttons">
+        <button id="prev-sentence">←</button>
+        <button id="next-sentence">→</button>
+      </div>
+    </div>
   </div>
 
   <script>
-    let contentData = [];
-    let currentParagraphIndex = 0;
-    let currentQuestionIndex = 0;
+    let topicsData = [];
+    let currentTopic = null;
+    let currentSentenceIndex = 0;
 
-    const paragraphElement = document.getElementById("paragraph");
-    const paragraphContainer = document.getElementById("paragraph-container");
-    const continueBtn = document.getElementById("continue-btn");
-    const quizContainer = document.getElementById("quiz-container");
-    const questionBox = document.getElementById("question-box");
-    const nextBtn = document.getElementById("next-btn");
-
-    fetch("content.json")
-      .then((res) => res.json())
-      .then((data) => {
-        contentData = data;
-        paragraphElement.textContent = contentData[currentParagraphIndex].paragraph;
+    // Load JSON data
+    fetch('topics.json')
+      .then(res => res.json())
+      .then(data => {
+        topicsData = data.topics;
+        renderTopics();
       });
 
-    continueBtn.addEventListener("click", () => {
-      paragraphContainer.style.display = "none";
-      quizContainer.style.display = "block";
-      showQuestion();
-    });
-
-    nextBtn.addEventListener("click", () => {
-      currentQuestionIndex++;
-      const currentSet = contentData[currentParagraphIndex];
-      if (currentQuestionIndex >= currentSet.questions.length) {
-        currentParagraphIndex++;
-        currentQuestionIndex = 0;
-        if (currentParagraphIndex < contentData.length) {
-          paragraphElement.textContent = contentData[currentParagraphIndex].paragraph;
-          paragraphContainer.style.display = "block";
-          quizContainer.style.display = "none";
-        } else {
-          quizContainer.innerHTML = "<p>Quiz complete!</p>";
-        }
-      } else {
-        showQuestion();
-      }
-    });
-
-    function showQuestion() {
-      const q = contentData[currentParagraphIndex].questions[currentQuestionIndex];
-      questionBox.innerHTML = `
-        <div class="question">
-          <p><strong>Q${currentQuestionIndex + 1}:</strong> ${q.question}</p>
-          ${q.options.map(option => `<label><input type="radio" name="q" /> ${option}</label><br>`).join("")}
-        </div>
-      `;
+    function renderTopics() {
+      const topicsDiv = document.getElementById('topics');
+      topicsDiv.innerHTML = '';
+      topicsData.forEach(topic => {
+        const btn = document.createElement('button');
+        btn.className = 'topic-btn';
+        btn.textContent = topic.name;
+        btn.onclick = () => openTopic(topic);
+        topicsDiv.appendChild(btn);
+      });
     }
+
+    function openTopic(topic) {
+      currentTopic = topic;
+      currentSentenceIndex = 0;
+      document.getElementById('homepage').style.display = 'none';
+      document.getElementById('topic-view').style.display = 'block';
+      showSentence();
+    }
+
+    function showSentence() {
+      document.getElementById('sentence-container').textContent =
+        currentTopic.sentences[currentSentenceIndex];
+    }
+
+    document.getElementById('back-to-home').onclick = () => {
+      document.getElementById('topic-view').style.display = 'none';
+      document.getElementById('homepage').style.display = 'block';
+    };
+
+    document.getElementById('prev-sentence').onclick = () => {
+      if (currentSentenceIndex > 0) {
+        currentSentenceIndex--;
+        showSentence();
+      }
+    };
+
+    document.getElementById('next-sentence').onclick = () => {
+      if (currentSentenceIndex < currentTopic.sentences.length - 1) {
+        currentSentenceIndex++;
+        showSentence();
+      }
+    };
   </script>
 </body>
 </html>
