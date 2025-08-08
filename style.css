@@ -1,80 +1,57 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f2f4f7;
-  margin: 0;
-  padding: 0;
-  color: #333;
-}
-
-.container {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-}
-
-h1, h2 {
-  text-align: center;
-  color: #2c3e50;
-}
-
-#paragraph {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  padding: 15px;
-  background-color: #f8f9fa;
-  border-left: 5px solid #3498db;
-  border-radius: 6px;
-}
-
-#question {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: #34495e;
-}
-
-#options {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.option-card {
-  padding: 15px 20px;
-  border: 2px solid #ddd;
-  background-color: #fff;
-  border-radius: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: left;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
-}
-
-.option-card:hover {
-  background-color: #f0f4ff;
-  border-color: #3498db;
-}
-
-.option-card.correct {
-  background-color: #d4f9d2;
-  border-color: #27ae60;
-  color: #2c662d;
-}
-
-.option-card.incorrect {
-  background-color: #fbdcdc;
-  border-color: #e74c3c;
-  color: #943126;
-}
-
-#score {
-  font-size: 22px;
-  text-align: center;
-  margin-top: 30px;
-  color: #2d3436;
-}
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+  }
+  
+  h1 {
+    margin-top: 20px;
+  }
+  
+  #topics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .topic-btn {
+    font-size: 1.5rem;
+    margin: 10px;
+    padding: 15px 25px;
+    background: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .topic-btn:hover {
+    background: #ddd;
+  }
+  
+  #sentence-container {
+    font-size: 1.5rem;
+    margin-top: 50px;
+  }
+  
+  .nav-buttons {
+    margin-top: 20px;
+  }
+  
+  .nav-buttons button {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    margin: 0 5px;
+  }
+  
+  #back-to-home {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
