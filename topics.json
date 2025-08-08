@@ -1,0 +1,21 @@
+{
+    "topics": [
+      {
+        "name": "Technology",
+        "sentences": [
+          "Technology is the application of scientific knowledge for practical purposes.",
+          "It includes tools, machines, and systems that solve problems.",
+          "Modern technology impacts communication, transportation, and healthcare."
+        ]
+      },
+      {
+        "name": "Startup",
+        "sentences": [
+          "A startup is a young company founded to develop a unique product or service.",
+          "Startups often aim for rapid growth and innovation.",
+          "They usually face high risks but also potential high rewards."
+        ]
+      }
+    ]
+  }
+  
