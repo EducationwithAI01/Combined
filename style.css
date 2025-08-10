@@ -1,57 +1,48 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4;
-  }
-  
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+}
+
+h1 {
+  font-size: 1.8em;
+  margin: 20px 0;
+}
+
+.topic-button, .related-button, .home-button {
+  display: block;
+  margin: 10px auto;
+  padding: 12px 18px;
+  font-size: 1.1em;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 80%;
+  max-width: 300px;
+}
+
+.topic-button:hover, .related-button:hover, .home-button:hover {
+  background: #0056b3;
+}
+
+#sentence {
+  font-size: 1.2em;
+  margin: 20px;
+}
+
+#related-topics h3 {
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
   h1 {
-    margin-top: 20px;
+    font-size: 1.5em;
   }
-  
-  #topics {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
+  #sentence {
+    font-size: 1em;
   }
-  
-  .topic-btn {
-    font-size: 1.5rem;
-    margin: 10px;
-    padding: 15px 25px;
-    background: white;
-    border: 2px solid #333;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  .topic-btn:hover {
-    background: #ddd;
-  }
-  
-  #sentence-container {
-    font-size: 1.5rem;
-    margin-top: 50px;
-  }
-  
-  .nav-buttons {
-    margin-top: 20px;
-  }
-  
-  .nav-buttons button {
-    font-size: 1.5rem;
-    padding: 10px 20px;
-    margin: 0 5px;
-  }
-  
-  #back-to-home {
-    margin-top: 20px;
-    padding: 10px 15px;
-    background: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
+}
