@@ -1,163 +1,262 @@
 {
-  "topics": [
+  "categories": [
     {
       "name": "Technology",
-      "sentences": [
-        "Technology is the application of scientific knowledge for practical purposes.",
-        "It includes tools, machines, and systems that solve problems.",
-        "Modern technology impacts communication, transportation, and healthcare."
+      "topics": [
+        {
+          "name": "Technology",
+          "sentences": [
+            "Technology is the application of scientific knowledge for practical purposes.",
+            "It includes tools, machines, and systems that solve problems.",
+            "Modern technology impacts communication, transportation, and healthcare."
+          ]
+        },
+        {
+          "name": "Artificial Intelligence",
+          "sentences": [
+            "Artificial Intelligence is the simulation of human intelligence in machines.",
+            "It is used in areas like speech recognition, decision-making, and automation.",
+            "AI systems can learn, adapt, and improve over time."
+          ]
+        },
+        {
+          "name": "Machine Learning",
+          "sentences": [
+            "Machine Learning is a subset of AI that uses data to improve performance.",
+            "It powers recommendation systems, predictive analytics, and fraud detection.",
+            "ML algorithms can identify patterns in large datasets without explicit programming."
+          ]
+        },
+        {
+          "name": "5G Technology",
+          "sentences": [
+            "5G is the fifth generation of mobile network technology.",
+            "It offers faster speeds, lower latency, and greater capacity than previous generations.",
+            "5G enables advancements in IoT, autonomous vehicles, and real-time communication."
+          ]
+        }
       ]
     },
     {
-      "name": "Startup",
-      "sentences": [
-        "A startup is a young company founded to develop a unique product or service.",
-        "Startups often aim for rapid growth and innovation.",
-        "They usually face high risks but also potential high rewards."
-      ]
-    },
-    {
-      "name": "Artificial Intelligence",
-      "sentences": [
-        "Artificial intelligence is the simulation of human intelligence in machines.",
-        "AI can perform tasks that typically require human thinking, like decision-making.",
-        "Examples include chatbots, recommendation systems, and self-driving cars."
-      ]
-    },
-    {
-      "name": "Space Exploration",
-      "sentences": [
-        "Space exploration is the investigation of outer space using astronomy and space technology.",
-        "It has led to discoveries about planets, stars, and galaxies.",
-        "Missions like the Apollo moon landing and Mars rovers are famous examples."
-      ]
-    },
-    {
-      "name": "Climate Change",
-      "sentences": [
-        "Climate change refers to long-term shifts in temperatures and weather patterns.",
-        "It is largely driven by human activities, especially burning fossil fuels.",
-        "Its impacts include rising sea levels, extreme weather, and biodiversity loss."
-      ]
-    },
-    {
-      "name": "Blockchain",
-      "sentences": [
-        "Blockchain is a distributed digital ledger that records transactions securely.",
-        "It is the foundation of cryptocurrencies like Bitcoin.",
-        "Beyond finance, blockchain is used in supply chains and digital identity."
-      ]
-    },
-    {
-      "name": "Cybersecurity",
-      "sentences": [
-        "Cybersecurity is the practice of protecting systems, networks, and data from attacks.",
-        "Threats include hacking, phishing, and malware.",
-        "Good cybersecurity involves strong passwords, encryption, and monitoring."
-      ]
-    },
-    {
-      "name": "Robotics",
-      "sentences": [
-        "Robotics involves the design, construction, and use of robots.",
-        "Robots can perform repetitive tasks, dangerous jobs, or delicate operations.",
-        "They are used in manufacturing, healthcare, and even space exploration."
-      ]
-    },
-    {
-      "name": "Virtual Reality",
-      "sentences": [
-        "Virtual reality is a computer-generated simulation of a three-dimensional environment.",
-        "Users experience VR through headsets and controllers.",
-        "It is used in gaming, training, and therapy."
-      ]
-    },
-    {
-      "name": "Renewable Energy",
-      "sentences": [
-        "Renewable energy comes from sources that are naturally replenished.",
-        "Examples include solar, wind, hydro, and geothermal power.",
-        "It helps reduce greenhouse gas emissions and dependence on fossil fuels."
-      ]
-    },
-    {
-      "name": "Genetics",
-      "sentences": [
-        "Genetics is the study of genes and heredity in living organisms.",
-        "It helps us understand traits, diseases, and evolution.",
-        "Modern genetics enables technologies like CRISPR gene editing."
-      ]
-    },
-    {
-      "name": "Astronomy",
-      "sentences": [
-        "Astronomy is the scientific study of celestial objects and phenomena.",
-        "It explores planets, stars, galaxies, and the universe's origin.",
-        "Astronomy combines observation, theory, and technology."
-      ]
-    },
-    {
-      "name": "Psychology",
-      "sentences": [
-        "Psychology is the scientific study of the human mind and behavior.",
-        "It covers areas like cognition, emotion, and mental health.",
-        "Psychologists work in research, therapy, and education."
-      ]
-    },
-    {
-      "name": "Economics",
-      "sentences": [
-        "Economics studies how people and societies use resources.",
-        "It is divided into microeconomics and macroeconomics.",
-        "Economic theories help shape policies and business strategies."
+      "name": "Science",
+      "topics": [
+        {
+          "name": "Science",
+          "sentences": [
+            "Science is the systematic study of the structure and behavior of the natural world.",
+            "It relies on observation, experimentation, and evidence-based reasoning.",
+            "Scientific discoveries shape technology, medicine, and industry."
+          ]
+        },
+        {
+          "name": "Physics",
+          "sentences": [
+            "Physics is the study of matter, energy, and the fundamental forces of nature.",
+            "It explains concepts from the smallest particles to the largest galaxies.",
+            "Physics underpins engineering, space exploration, and electronics."
+          ]
+        },
+        {
+          "name": "Chemistry",
+          "sentences": [
+            "Chemistry is the study of substances, their properties, and reactions.",
+            "It plays a central role in pharmaceuticals, agriculture, and manufacturing.",
+            "Chemical principles explain the composition of matter and energy changes."
+          ]
+        },
+        {
+          "name": "Neuroscience",
+          "sentences": [
+            "Neuroscience studies the brain, spinal cord, and nervous system.",
+            "It helps us understand memory, emotions, and behavior.",
+            "Research in neuroscience guides treatments for neurological disorders."
+          ]
+        }
       ]
     },
     {
       "name": "History",
-      "sentences": [
-        "History is the study of past events, especially human affairs.",
-        "It helps us understand cultural development and change.",
-        "Historical analysis relies on evidence from documents, artifacts, and oral traditions."
+      "topics": [
+        {
+          "name": "History",
+          "sentences": [
+            "History is the record of past events, people, and societies.",
+            "It helps us understand cultural evolution and societal change.",
+            "Historical study provides lessons to guide present and future decisions."
+          ]
+        },
+        {
+          "name": "World Wars",
+          "sentences": [
+            "The two World Wars reshaped global politics and society in the 20th century.",
+            "They involved many nations and caused massive social and economic change.",
+            "Their aftermath led to the creation of international organizations like the UN."
+          ]
+        },
+        {
+          "name": "Cultural History",
+          "sentences": [
+            "Cultural history studies the traditions, arts, and values of past societies.",
+            "It explores how cultures influence and interact with each other.",
+            "Cultural history preserves heritage and identity."
+          ]
+        },
+        {
+          "name": "Philosophy",
+          "sentences": [
+            "Philosophy examines fundamental questions about existence, knowledge, and ethics.",
+            "It encourages critical thinking and logical reasoning.",
+            "Philosophy has shaped political systems, religions, and sciences."
+          ]
+        }
       ]
     },
     {
-      "name": "Philosophy",
-      "sentences": [
-        "Philosophy is the study of fundamental questions about existence, knowledge, and ethics.",
-        "It encourages critical thinking and reasoning.",
-        "Major branches include metaphysics, epistemology, and ethics."
+      "name": "Business",
+      "topics": [
+        {
+          "name": "Business",
+          "sentences": [
+            "Business involves producing, buying, or selling goods and services.",
+            "It drives economic growth and creates job opportunities.",
+            "Successful businesses adapt to changing markets and consumer needs."
+          ]
+        },
+        {
+          "name": "Marketing",
+          "sentences": [
+            "Marketing promotes products or services to attract customers.",
+            "It involves market research, advertising, and brand management.",
+            "Digital marketing uses online platforms to reach targeted audiences."
+          ]
+        },
+        {
+          "name": "Sales",
+          "sentences": [
+            "Sales involve persuading customers to purchase products or services.",
+            "Effective sales strategies build trust and long-term relationships.",
+            "Sales teams work closely with marketing to meet business goals."
+          ]
+        },
+        {
+          "name": "Economics",
+          "sentences": [
+            "Economics studies the production, distribution, and consumption of goods and services.",
+            "It explores how individuals, businesses, and governments make decisions.",
+            "Economic theories influence policies and financial systems."
+          ]
+        }
       ]
     },
     {
-      "name": "Art",
-      "sentences": [
-        "Art is the expression of creativity through visual, auditory, or performance mediums.",
-        "It includes painting, sculpture, music, dance, and more.",
-        "Art often reflects cultural values and emotions."
+      "name": "Health",
+      "topics": [
+        {
+          "name": "Health",
+          "sentences": [
+            "Health is the state of complete physical, mental, and social well-being.",
+            "It depends on nutrition, exercise, environment, and medical care.",
+            "Preventive healthcare reduces the risk of chronic diseases."
+          ]
+        },
+        {
+          "name": "Mental Health",
+          "sentences": [
+            "Mental health refers to emotional, psychological, and social well-being.",
+            "It affects how people think, feel, and interact with others.",
+            "Maintaining mental health involves stress management, therapy, and support systems."
+          ]
+        },
+        {
+          "name": "Fitness",
+          "sentences": [
+            "Fitness is the ability to perform physical activity effectively.",
+            "It improves strength, endurance, and flexibility.",
+            "Regular exercise reduces the risk of heart disease, diabetes, and obesity."
+          ]
+        },
+        {
+          "name": "First Aid",
+          "sentences": [
+            "First aid is the immediate assistance given to someone who is injured or ill.",
+            "It can prevent a condition from worsening before professional help arrives.",
+            "Basic first aid skills can save lives in emergencies."
+          ]
+        }
       ]
     },
     {
-      "name": "Mathematics",
-      "sentences": [
-        "Mathematics is the study of numbers, shapes, and patterns.",
-        "It is used in science, engineering, finance, and everyday problem-solving.",
-        "Mathematics includes areas like algebra, calculus, and statistics."
+      "name": "Travel",
+      "topics": [
+        {
+          "name": "Travel",
+          "sentences": [
+            "Travel is the movement of people between distant places.",
+            "It offers opportunities to explore new cultures and environments.",
+            "Travel can be for leisure, business, or education."
+          ]
+        },
+        {
+          "name": "Food Travel",
+          "sentences": [
+            "Food travel focuses on experiencing local cuisine while exploring destinations.",
+            "It connects culinary traditions with cultural identity.",
+            "Food tourism boosts local economies and preserves traditional recipes."
+          ]
+        },
+        {
+          "name": "Luxury Tourism",
+          "sentences": [
+            "Luxury tourism offers high-end travel experiences with premium services.",
+            "It includes exclusive resorts, private tours, and personalized itineraries.",
+            "Luxury travel focuses on comfort, privacy, and unique experiences."
+          ]
+        },
+        {
+          "name": "Space Travel",
+          "sentences": [
+            "Space travel is the journey beyond Earth's atmosphere.",
+            "It has advanced through government programs and private companies.",
+            "Space exploration expands human knowledge of the universe."
+          ]
+        }
       ]
     },
     {
-      "name": "Biology",
-      "sentences": [
-        "Biology is the scientific study of life and living organisms.",
-        "It covers topics like cells, evolution, ecosystems, and genetics.",
-        "Biology research informs medicine, conservation, and biotechnology."
-      ]
-    },
-    {
-      "name": "Literature",
-      "sentences": [
-        "Literature refers to written works, especially those with artistic value.",
-        "It includes fiction, poetry, drama, and essays.",
-        "Literature reflects society, history, and human experiences."
+      "name": "Psychology",
+      "topics": [
+        {
+          "name": "Psychology",
+          "sentences": [
+            "Psychology is the scientific study of the mind and behavior.",
+            "It examines mental processes like perception, memory, and emotion.",
+            "Psychology applies to therapy, education, and workplace performance."
+          ]
+        },
+        {
+          "name": "Behavior Psychology",
+          "sentences": [
+            "Behavioral psychology studies how the environment shapes actions.",
+            "It focuses on conditioning, habits, and learned behaviors.",
+            "Behavior therapy helps people change unwanted behaviors."
+          ]
+        },
+        {
+          "name": "Self-Improvement",
+          "sentences": [
+            "Self-improvement involves activities that enhance skills and personal growth.",
+            "It includes goal setting, habit building, and lifelong learning.",
+            "Self-improvement boosts confidence and productivity."
+          ]
+        },
+        {
+          "name": "Therapy",
+          "sentences": [
+            "Therapy is treatment aimed at relieving psychological distress.",
+            "It can be individual, group, or family-based.",
+            "Therapists use evidence-based techniques to support mental health."
+          ]
+        }
       ]
     }
   ]
