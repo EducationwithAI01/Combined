@@ -1,60 +1,157 @@
-let data;
+let topicsData = {};
 let currentTopic = null;
-let currentCategory = null;
 let currentSentenceIndex = 0;
+let autoTimer = null;
+let timerRunning = true;
 
-async function loadData() {
-  const response = await fetch('topics.json');
-  data = await response.json();
-  loadHomepage();
-}
+const toggleTimerBtn = document.getElementById("toggleTimerBtn");
 
-function loadHomepage() {
-  const topicsContainer = document.getElementById('topics');
-  topicsContainer.innerHTML = '';
+fetch("topics.json")
+  .then(res => res.json())
+  .then(data => {
+    topicsData = data;
+    showHomepage();
+  });
 
-  data.categories.forEach(category => {
-    const coreTopic = category.topics[0];
-    const btn = document.createElement('button');
-    btn.textContent = coreTopic.name;
-    btn.className = 'topic-button';
-    btn.onclick = () => showTopic(coreTopic, category);
-    topicsContainer.appendChild(btn);
+function showHomepage() {
+  clearAutoTimer();
+  timerRunning = true;
+  toggleTimerBtn.textContent = "Stop Timer";
+
+  document.getElementById("homepage").style.display = "block";
+  document.getElementById("topicView").style.display = "none";
+
+  const coreTopicsContainer = document.getElementById("coreTopics");
+  coreTopicsContainer.innerHTML = "";
+
+  topicsData.categories.forEach(category => {
+    const btn = document.createElement("button");
+    btn.textContent = category.topics[0].name;
+    btn.onclick = () => showTopic(category.topics[0].name);
+    coreTopicsContainer.appendChild(btn);
   });
 }
 
-function showTopic(topic, category) {
-  currentTopic = topic;
-  currentCategory = category;
+function showTopic(topicName) {
+  document.getElementById("homepage").style.display = "none";
+  document.getElementById("topicView").style.display = "block";
+
+  currentTopic = findTopic(topicName);
   currentSentenceIndex = 0;
-  document.getElementById('homepage').style.display = 'none';
-  document.getElementById('topic-page').style.display = 'block';
   displaySentence();
-  displayRelatedTopics();
+  startAutoTimer();
 }
 
 function displaySentence() {
-  document.getElementById('sentence').textContent =
-    currentTopic.sentences[currentSentenceIndex] || '';
-}
+  // Show current topic name above sentence
+  document.getElementById("topicTitle").textContent = currentTopic.name;
 
-function displayRelatedTopics() {
-  const relatedContainer = document.getElementById('related-topics');
-  relatedContainer.innerHTML = '<h3>Related Topics</h3>';
-  currentCategory.topics.forEach(t => {
-    if (t.name !== currentTopic.name) {
-      const btn = document.createElement('button');
+  document.getElementById("sentenceContainer").textContent =
+    currentTopic.sentences[currentSentenceIndex];
+
+  // Related topics (exclude current)
+  const relatedContainer = document.getElementById("relatedTopics");
+  relatedContainer.innerHTML = "";
+
+  let category = findCategory(currentTopic.name);
+  category.topics
+    .filter(t => t.name !== currentTopic.name)
+    .forEach(t => {
+      const btn = document.createElement("button");
       btn.textContent = t.name;
-      btn.className = 'related-button';
-      btn.onclick = () => showTopic(t, currentCategory);
+      btn.onclick = () => {
+        clearAutoTimer();
+        showTopic(t.name);
+      };
       relatedContainer.appendChild(btn);
+    });
+}
+
+function nextSentence() {
+  if (currentSentenceIndex < currentTopic.sentences.length - 1) {
+    currentSentenceIndex++;
+    displaySentence();
+  } else {
+    // Move to next topic in the same category (loop if last)
+    let category = findCategory(currentTopic.name);
+    let topics = category.topics;
+    let currentIndex = topics.findIndex(t => t.name === currentTopic.name);
+
+    let nextIndex = (currentIndex + 1) % topics.length;  // wrap around
+    currentTopic = topics[nextIndex];
+    currentSentenceIndex = 0;
+    displaySentence();
+  }
+}
+
+function startAutoTimer() {
+  clearAutoTimer();
+
+  if (!timerRunning) return;
+
+  const sentence = currentTopic.sentences[currentSentenceIndex];
+  const wordsCount = sentence.trim().split(/\s+/).length;
+  const delay = 2000 + wordsCount * 400; // 2 sec base + 400ms per word
+
+  autoTimer = setTimeout(() => {
+    nextSentence();
+    startAutoTimer();
+  }, delay);
+}
+
+function clearAutoTimer() {
+  if (autoTimer) {
+    clearTimeout(autoTimer);
+    autoTimer = null;
+  }
+}
+
+toggleTimerBtn.onclick = () => {
+  if (timerRunning) {
+    clearAutoTimer();
+    timerRunning = false;
+    toggleTimerBtn.textContent = "Start Timer";
+  } else {
+    timerRunning = true;
+    toggleTimerBtn.textContent = "Stop Timer";
+    startAutoTimer();
+  }
+};
+
+document.getElementById("backBtn").onclick = () => {
+  if (timerRunning) clearAutoTimer();
+  if (currentSentenceIndex > 0) {
+    currentSentenceIndex--;
+    displaySentence();
+  }
+  if (timerRunning) startAutoTimer();
+};
+
+document.getElementById("nextBtn").onclick = () => {
+  if (timerRunning) clearAutoTimer();
+  nextSentence();
+  if (timerRunning) startAutoTimer();
+};
+
+document.getElementById("homeBtn").onclick = () => {
+  clearAutoTimer();
+  timerRunning = true;
+  toggleTimerBtn.textContent = "Stop Timer";
+  showHomepage();
+};
+
+// Helpers
+function findTopic(name) {
+  for (let category of topicsData.categories) {
+    for (let topic of category.topics) {
+      if (topic.name === name) return topic;
     }
-  });
+  }
+  return null;
 }
 
-function goHome() {
-  document.getElementById('homepage').style.display = 'block';
-  document.getElementById('topic-page').style.display = 'none';
+function findCategory(topicName) {
+  return topicsData.categories.find(cat =>
+    cat.topics.some(t => t.name === topicName)
+  );
 }
-
-loadData();
