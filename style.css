@@ -1,48 +1,127 @@
 body {
   font-family: Arial, sans-serif;
-  text-align: center;
   margin: 0;
   padding: 0;
-  background: #f4f4f4;
+  background: #f9f9f9;
+  text-align: center;
 }
 
 h1 {
-  font-size: 1.8em;
-  margin: 20px 0;
-}
-
-.topic-button, .related-button, .home-button {
-  display: block;
-  margin: 10px auto;
-  padding: 12px 18px;
-  font-size: 1.1em;
-  background: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  width: 80%;
-  max-width: 300px;
-}
-
-.topic-button:hover, .related-button:hover, .home-button:hover {
-  background: #0056b3;
-}
-
-#sentence {
-  font-size: 1.2em;
-  margin: 20px;
-}
-
-#related-topics h3 {
+  font-size: 24px;
   margin-top: 20px;
 }
 
+#homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#coreTopics {
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+#coreTopics button {
+  display: block;
+  width: 90%;
+  max-width: 400px;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+#coreTopics button:hover {
+  background-color: #0056b3;
+}
+
+/* Topic view */
+#sentenceContainer {
+  font-size: 20px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+#relatedTopics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#relatedTopics button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #6c757d;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#relatedTopics button:hover {
+  background-color: #5a6268;
+}
+
+#navigationButtons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+#navigationButtons button {
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+#navigationButtons button:hover {
+  background-color: #1e7e34;
+}
+
+/* Specific styling for toggle timer button */
+#toggleTimerBtn {
+  background-color: #dc3545;
+}
+
+#toggleTimerBtn:hover {
+  background-color: #c82333;
+}
+
+/* Responsive adjustments */
 @media (max-width: 600px) {
-  h1 {
-    font-size: 1.5em;
+  #coreTopics button {
+    font-size: 16px;
+    padding: 10px;
   }
-  #sentence {
-    font-size: 1em;
+  #sentenceContainer {
+    font-size: 18px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+  }
+  #navigationButtons button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  #relatedTopics button {
+    font-size: 13px;
+    padding: 7px 10px;
   }
 }
