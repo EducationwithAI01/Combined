@@ -1,95 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Topics</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Topic Explorer</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8N1PSTX87B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8N1PSTX87B');
-</script>
 </head>
 <body>
-  <div id="app">
-    <!-- Homepage -->
-    <div id="homepage">
-      <h1>Select a Topic</h1>
-      <div id="topics"></div>
-    </div>
 
-    <!-- Topic view -->
-    <div id="topic-view" style="display: none;">
-      <button id="back-to-home">Go to Homepage</button>
-      <div id="sentence-container"></div>
-      <div class="nav-buttons">
-        <button id="prev-sentence">←</button>
-        <button id="next-sentence">→</button>
-      </div>
-    </div>
+  <!-- Homepage -->
+  <div id="homepage">
+    <h1>Select a Topic</h1>
+    <div id="topics"></div>
   </div>
 
-  <script>
-    let topicsData = [];
-    let currentTopic = null;
-    let currentSentenceIndex = 0;
+  <!-- Topic Page -->
+  <div id="topic-page" style="display:none;">
+    <p id="sentence"></p>
+    <div id="related-topics"></div>
+    <button class="home-button" onclick="goHome()">Go to Homepage</button>
+  </div>
 
-    // Load JSON data
-    fetch('topics.json')
-      .then(res => res.json())
-      .then(data => {
-        topicsData = data.topics;
-        renderTopics();
-      });
-
-    function renderTopics() {
-      const topicsDiv = document.getElementById('topics');
-      topicsDiv.innerHTML = '';
-      topicsData.forEach(topic => {
-        const btn = document.createElement('button');
-        btn.className = 'topic-btn';
-        btn.textContent = topic.name;
-        btn.onclick = () => openTopic(topic);
-        topicsDiv.appendChild(btn);
-      });
-    }
-
-    function openTopic(topic) {
-      currentTopic = topic;
-      currentSentenceIndex = 0;
-      document.getElementById('homepage').style.display = 'none';
-      document.getElementById('topic-view').style.display = 'block';
-      showSentence();
-    }
-
-    function showSentence() {
-      document.getElementById('sentence-container').textContent =
-        currentTopic.sentences[currentSentenceIndex];
-    }
-
-    document.getElementById('back-to-home').onclick = () => {
-      document.getElementById('topic-view').style.display = 'none';
-      document.getElementById('homepage').style.display = 'block';
-    };
-
-    document.getElementById('prev-sentence').onclick = () => {
-      if (currentSentenceIndex > 0) {
-        currentSentenceIndex--;
-        showSentence();
-      }
-    };
-
-    document.getElementById('next-sentence').onclick = () => {
-      if (currentSentenceIndex < currentTopic.sentences.length - 1) {
-        currentSentenceIndex++;
-        showSentence();
-      }
-    };
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
